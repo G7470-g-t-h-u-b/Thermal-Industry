@@ -1920,7 +1920,7 @@ public class ExampleJavaMod extends Mod{
                     lifetime=25;
                     reload=45;
                     colors= new Color[]{Pal.heal};
-                }};;
+                }};
                 recoil=1.4f;
                 top=false;
                 mirror=false;
@@ -1939,6 +1939,7 @@ public class ExampleJavaMod extends Mod{
             abilities.add(new RepairFieldAbility(10,180,96));
             abilities.add(new ShieldRegenFieldAbility(20,60,300,80));
         }};
+        ModUnits.load0();
         ModUnits.charge=new ErekirUnitType("charge"){{
             outlineColor=Pal.gray;
             drag=0.07f;

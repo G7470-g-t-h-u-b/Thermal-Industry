@@ -1,8 +1,10 @@
 package example;
 
 import mindustry.ai.types.CargoAI;
+import mindustry.entities.bullet.BasicBulletType;
 import mindustry.gen.UnitEntity;
 import mindustry.type.UnitType;
+import mindustry.type.Weapon;
 import mindustry.type.unit.ErekirUnitType;
 
 public class ModUnits {
@@ -14,6 +16,30 @@ public class ModUnits {
     public static ErekirUnitType charge;
     public static UnitType anvil;
     public static UnitType drone;
+    public static UnitType gax_37;
+    public static void load0(){
+        gax_37=new UnitType("gax-37"){{
+            health=450;
+            armor=30;
+            speed=1.12f;
+            constructor=UnitEntity::create;
+            hitSize=14;
+            itemCapacity=20;
+            flying=true;
+            weapons.add(new Weapon(){{
+                mirror=false;
+                bullet=new BasicBulletType(4.2f,20){{
+//                    killShooter=true;
+//                    fragBullets=5;
+//                    fragRandomSpread=360;
+//                    fragBullet=new BasicBulletType(10f,0){{
+//                        lifetime=10;
+//                        spawnUnit=UnitTypes.vela;
+//                    }};
+                }};
+            }});
+        }};
+    }
     public static void loadDrone(){
         drone=new ErekirUnitType("drone"){{
             envDisabled=0;

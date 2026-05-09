@@ -29,7 +29,7 @@ import mindustry.world.meta.StatValues;
 
 import static mindustry.Vars.state;
 
-public class MultiFormulaFactory extends GenericCrafter {
+public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举啊!
     public DrawBlock drawer = new DrawDefault();
     public int[] capacities = new int[0];
     public Seq<ItemPlan> plans = new Seq<>(10);
@@ -181,23 +181,17 @@ public class MultiFormulaFactory extends GenericCrafter {
         }
 
         public void buildConfiguration(Table table) {
-            ItemSelection.buildTable(MultiFormulaFactory.this, table, Vars.content.items(), () -> this.outputItem, this::configure, MultiFormulaFactory.this.selectionRows, MultiFormulaFactory.this.selectionColumns);
+            Seq<Item> items=Seq.with(plans).map(i ->i.item.item).removeAll(i->i.unlockedNow() && !i.isBanned());
+
+            if (items.any()){
+                ItemSelection.buildTable(MultiFormulaFactory.this, table, items, () -> currentPlan == -1 ? null : plans.get(currentPlan).item.item, item -> configure(plans.indexOf(i -> i.item.item == item)), selectionRows, selectionColumns);
+
+                table.row();
+            }else {
+                table.table(Styles.black3,t->t.add("@none").color(Color.lightGray));
+            }
         }
 
-//        public void display(Table table) {
-//            super.display(table);
-//            TextureRegionDrawable reg = new TextureRegionDrawable();
-//            table.row();
-//            table.table((t) -> {
-//                t.left();
-//                t.image().update((i) -> {
-//                    i.setDrawable(this.currentPlan == -1 ? Icon.cancel : reg.set(((ItemPlan)MultiFormulaFactory.this.plans.get(this.currentPlan)).item.item.uiIcon));
-//                    i.setScaling(Scaling.fit);
-//                    i.setColor(this.currentPlan == -1 ? Color.lightGray : Color.white);
-//                }).size(32.0F).padBottom(-4.0F).padRight(2.0F);
-//                t.label(() -> this.currentPlan == -1 ? "@none" : ((ItemPlan)MultiFormulaFactory.this.plans.get(this.currentPlan)).item.item.localizedName).wrap().width(230.0F).color(Color.lightGray);
-//            }).left();
-//        }
 
         public Object config() {
             return currentPlan;
@@ -215,7 +209,7 @@ public class MultiFormulaFactory extends GenericCrafter {
                 currentPlan = -1;
             }
 
-            ItemPlan plan=plans.get(currentPlan);
+            ItemPlan plan=plans.get(currentPlan);//todo:error
             if (efficiency>0){
                 progress += getProgressIncrease(craftTime);
             }
@@ -257,13 +251,13 @@ public class MultiFormulaFactory extends GenericCrafter {
         public ItemStack item() {
             return this.currentPlan == -1 ? null : MultiFormulaFactory.this.plans.get(this.currentPlan).item;
         }
-
+        //坏了
         @Override
         public byte version() {
             return 1;
         }
 
-        @Override
+        @Override//坏了坏了
         public void write(Writes write) {
             super.write(write);
             write.f(progress);
@@ -277,6 +271,7 @@ public class MultiFormulaFactory extends GenericCrafter {
                 progress = read.f();
                 currentPlan = read.s();
             }
-        }
+        }//(x) oh no!
+        //'ThermalIndustry'(thermal-industry)has caused Mindustry to crash
     }
 }
