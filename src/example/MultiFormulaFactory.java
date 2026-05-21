@@ -20,7 +20,6 @@ import mindustry.type.LiquidStack;
 import mindustry.ui.Styles;
 import mindustry.world.blocks.ItemSelection;
 import mindustry.world.blocks.production.GenericCrafter;
-import mindustry.world.blocks.units.UnitFactory;
 import mindustry.world.consumers.ConsumeItems;
 import mindustry.world.draw.DrawBlock;
 import mindustry.world.draw.DrawDefault;
@@ -57,6 +56,13 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
         rotate = true;
         regionRotated1 = 1;
         commandable = true;
+        config(Integer.class,(MultiFormulaFactory.MultiFormulaFactoryBuild build,Integer i)->{
+            if(!configurable) return;
+
+            if (build.currentPlan==i)return;
+            build.currentPlan = i < 0 || i >= plans.size ? -1 : i;
+            build.progress = 0;
+        });
         config(Item.class, (MultiFormulaFactory.MultiFormulaFactoryBuild build, Item val) -> {
             if(!configurable) return;
 

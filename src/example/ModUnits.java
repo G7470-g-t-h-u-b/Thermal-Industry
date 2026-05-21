@@ -2,7 +2,6 @@ package example;
 
 import mindustry.ai.types.CargoAI;
 import mindustry.content.StatusEffects;
-import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.bullet.LaserBoltBulletType;
 import mindustry.gen.UnitEntity;
 import mindustry.graphics.Pal;
@@ -24,7 +23,7 @@ public class ModUnits {
         gax_37=new UnitType("gax-37"){{
             health=450;
             armor=30;
-            speed=1.12f;
+            speed=1.21f;
             constructor=UnitEntity::create;
             hitSize=12;
             itemCapacity=20;
