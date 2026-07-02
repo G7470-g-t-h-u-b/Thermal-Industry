@@ -24,6 +24,7 @@ import mindustry.game.EventType.*;
 import mindustry.game.Objectives;
 import mindustry.gen.*;
 import mindustry.graphics.Drawf;
+import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
 import mindustry.graphics.Trail;
 import mindustry.graphics.g3d.*;
@@ -142,9 +143,9 @@ public class ExampleJavaMod extends Mod{
                 }
             });
         });
-        ModFx.shootFireFx= (new Effect(70, (e) -> {
+        ModFx.shootFireFx= (new Effect(80, (e) -> {
             Draw.color(Pal.lightFlame, Pal.darkFlame, Color.gray, e.fin());
-            Angles.randLenVectors(e.id, 18,105+e.fin()*180, e.rotation, 18.0F, (x, y) ->
+            Angles.randLenVectors(e.id, 19,100+e.fin()*180, e.rotation, 16.0F, (x, y) ->
                     Fill.circle(e.x + x, e.y + y, 0.2F + e.fout() * 1.5F));
         })).followParent(false);
 
@@ -1065,7 +1066,7 @@ public class ExampleJavaMod extends Mod{
             health=380;
             coolant=this.consumeCoolant(0.15F);
             maxAmmo=60;
-            ammo(Items.coal,new BulletType(6,22){{
+            ammo(Items.coal,new BulletType(6,18){{
                 size=2;
                 ammoMultiplier=5;
                 lifetime=120;
@@ -1079,7 +1080,7 @@ public class ExampleJavaMod extends Mod{
                 status=StatusEffects.burning;
                 hittable=false;
                 keepVelocity=false;
-            }},Items.pyratite,new BulletType(6.2f,35){{
+            }},Items.pyratite,new BulletType(6.2f,30){{
                 ammoMultiplier=5;
                 lifetime=120;
                 hitSize=7.2f;
@@ -1092,7 +1093,7 @@ public class ExampleJavaMod extends Mod{
                 status=StatusEffects.burning;
                 hittable=false;
                 keepVelocity=false;
-            }},Items.blastCompound,new BulletType(6.2f,55){{
+            }},Items.blastCompound,new BulletType(6.2f,41){{
                 ammoMultiplier=5;
                 lifetime=120;
                 hitSize=7.5f;
@@ -1107,7 +1108,7 @@ public class ExampleJavaMod extends Mod{
                 status=StatusEffects.burning;
                 hittable=false;
                 keepVelocity=false;
-            }},ModItems.industrialExplosives,new BulletType(6.2f,65){{
+            }},ModItems.industrialExplosives,new BulletType(6.2f,52){{
                 ammoMultiplier=5;
                 lifetime=120;
                 hitSize=7.5f;
@@ -1516,6 +1517,89 @@ public class ExampleJavaMod extends Mod{
             ammoPerShot=10;
             consumeAmmoOnce=true;
             coolant = consumeCoolant(0.5f);
+        }};
+        ModTurrets.phantomSpirit=new ItemTurret("phantom-spirit"){{
+            requirements(Category.turret,ItemStack.with());
+            reload=5;
+            final DrawPart.PartProgress haloProgress = DrawPart.PartProgress.warmup;
+            final Color tC=Color.black;
+            size=4;
+            ammo(Items.surgeAlloy,new LaserBoltBulletType(8f,90){{
+                hitColor=lightColor=backColor=trailColor=Color.black;
+                hitEffect=ModFx.hitPhantomSpirit;
+                width=3;
+                height=16;
+                trailLength=8;
+                trailWidth=0.8f;
+                ammoMultiplier=4;
+            }});
+            drawer=new DrawTurret(){{parts.addAll(new ShapePart(){{
+                progress=haloProgress;
+                circle=false;
+                hollow=true;
+                sides=3;
+                rotation=0;
+                rotateSpeed=0f;
+                color=tC;
+                radius=10;
+                stroke=0;
+                strokeTo=2;
+                layer=Layer.effect;
+            }},new ShapePart(){{
+                progress=haloProgress;
+                circle=false;
+                hollow=true;
+                sides=3;
+                rotation=180;
+                rotateSpeed=0f;
+                color=tC;
+                radius=10;
+                stroke=0;
+                strokeTo=2;
+                layer=Layer.effect;
+            }},new ShapePart(){{
+                progress=haloProgress;
+                circle=true;
+                hollow=true;
+                rotation=0;
+                rotateSpeed=0f;
+                color=tC;
+                radius=10;
+                stroke=0;
+                strokeTo=2;
+                layer=Layer.effect;
+            }},new HaloPart(){{
+                haloRotateSpeed=-3.5f;
+                progress=haloProgress;
+                shapes=3;
+                tri=true;
+                color=tC;
+                hollow=true;
+                stroke=0;
+                strokeTo=2;
+                triLength=0;
+                triLengthTo=17;
+                radius=14;
+                y=0;
+                haloRadius=20;
+                layer=Layer.effect;
+            }},new ShapePart(){{
+                progress=haloProgress;
+                circle=true;
+                hollow=true;
+                rotation=0;
+                rotateSpeed=0f;
+                color=tC;
+                radius=12;
+                stroke=0;
+                strokeTo=2;
+                layer=Layer.effect;
+            }});}};
+            shoot=new ShootAlternate(){{
+                spread=6f;
+                shots=4;
+                barrels=2;
+            }};
         }};
         ModTurrets.end=new ItemTurret("end"){{
             recoil=2;

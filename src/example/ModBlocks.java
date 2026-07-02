@@ -19,6 +19,7 @@ import mindustry.world.blocks.heat.HeatProducer;
 import mindustry.world.blocks.power.*;
 import mindustry.world.blocks.production.*;
 import mindustry.world.blocks.storage.CoreBlock;
+import mindustry.world.blocks.storage.StorageBlock;
 import mindustry.world.blocks.units.UnitCargoLoader;
 import mindustry.world.blocks.units.UnitCargoUnloadPoint;
 import mindustry.world.draw.DrawDefault;
@@ -26,6 +27,9 @@ import mindustry.world.draw.DrawFlame;
 import mindustry.world.draw.DrawMulti;
 import mindustry.world.meta.Attribute;
 import static mindustry.type.ItemStack.with;
+
+/*todo:装甲钢、装甲钢锻造炉
+*  高温合金坩埚(硅+矿渣)*/
 
 public class ModBlocks {
     public static RemoveWall explosive;
@@ -117,7 +121,9 @@ public class ModBlocks {
         Blocks.metalFloor3.requirements(Category.effect,ItemStack.with(Items.titanium,700,Items.scrap,800));
         Blocks.coreZone.requirements(Category.effect,ItemStack.with(Items.thorium,1000,Items.titanium,800,Items.silicon,500,ModItems.ferrum,600));
     }
+
     public static RemotAccessBox remotAccessBox;
+    public static StorageBlock armoredContainer;
     public static void load1(){
         glassAssemblyMachine=new GenericCrafter("glass-assembly-machine"){{
             size=2;
@@ -164,6 +170,12 @@ public class ModBlocks {
             outputItems=ItemStack.with(ModItems.ferrum,1);
             requirements(Category.crafting,ItemStack.with(Items.lead,40,ModItems.siliconSteel,30,ModItems.bronze,40,Items.titanium,30));
         }};
+        armoredContainer=new StorageBlock("armored-container"){{
+            size=2;
+            itemCapacity=300;
+            health=500;
+//            requirements(Category.effect,ItemStack.with(Items.titanium,70,ModItems.ferrum,50));
+        }};//todo:贴图
         remotAccessBox=new RemotAccessBox("remot-access-box"){{
             unitType= UnitTypes.alpha;
             size=2;

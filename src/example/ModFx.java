@@ -32,4 +32,16 @@ public class ModFx {
         Lines.stroke(e.fout() * 1.2F + 0.5F);
         Angles.randLenVectors(e.id, 7, 25.0F * e.finpow(), e.rotation, 50.0F, (x, y) -> Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), e.fin() * 5.0F + 2.0F));
     });
+    public static final Effect hitPhantomSpirit=new ExplosionEffect(){{
+        waveColor=sparkColor=smokeColor=Color.black;
+        lifetime=34;
+        waveLife=16;
+        waveRadBase=1.5f;
+        waveRad=17;
+        sparks=9;
+        sparkRad=26;
+        sparkLen=15;
+        smokes=8;
+        smokeRad=11;
+    }};
 }
