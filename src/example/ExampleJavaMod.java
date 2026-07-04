@@ -1526,7 +1526,8 @@ public class ExampleJavaMod extends Mod{
             size=4;
             ammo(Items.surgeAlloy,new LaserBoltBulletType(8f,90){{
                 hitColor=lightColor=backColor=trailColor=Color.black;
-                hitEffect=ModFx.hitPhantomSpirit;
+                frontColor=Color.red;
+                hitEffect=despawnEffect=ModFx.hitPhantomSpirit;
                 width=3;
                 height=16;
                 trailLength=8;
@@ -1544,7 +1545,7 @@ public class ExampleJavaMod extends Mod{
                 radius=10;
                 stroke=0;
                 strokeTo=2;
-                layer=Layer.effect;
+//                layer=Layer.effect;
             }},new ShapePart(){{
                 progress=haloProgress;
                 circle=false;
@@ -1556,7 +1557,7 @@ public class ExampleJavaMod extends Mod{
                 radius=10;
                 stroke=0;
                 strokeTo=2;
-                layer=Layer.effect;
+//                layer=Layer.effect;
             }},new ShapePart(){{
                 progress=haloProgress;
                 circle=true;
@@ -1567,7 +1568,7 @@ public class ExampleJavaMod extends Mod{
                 radius=10;
                 stroke=0;
                 strokeTo=2;
-                layer=Layer.effect;
+//                layer=Layer.effect;
             }},new HaloPart(){{
                 haloRotateSpeed=-3.5f;
                 progress=haloProgress;
@@ -1582,7 +1583,7 @@ public class ExampleJavaMod extends Mod{
                 radius=14;
                 y=0;
                 haloRadius=20;
-                layer=Layer.effect;
+//                layer=Layer.effect;
             }},new ShapePart(){{
                 progress=haloProgress;
                 circle=true;
@@ -1593,7 +1594,7 @@ public class ExampleJavaMod extends Mod{
                 radius=12;
                 stroke=0;
                 strokeTo=2;
-                layer=Layer.effect;
+//                layer=Layer.effect;
             }});}};
             shoot=new ShootAlternate(){{
                 spread=6f;
@@ -1998,7 +1999,7 @@ public class ExampleJavaMod extends Mod{
                 progress=PartProgress.warmup;
             }});
             }};
-            recoil=3;
+            recoil=3.2f;
             coolant=consumeCoolant(0.3F);
         }};
         ModUnits.unitType1=new UnitType("unit-type-1"){{

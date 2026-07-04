@@ -1,6 +1,7 @@
 package example;
 
 import arc.math.Mathf;
+import arc.struct.Seq;
 import arc.util.Tmp;
 import mindustry.Vars;
 import mindustry.content.Fx;
@@ -12,8 +13,7 @@ import mindustry.logic.Ranged;
 import mindustry.type.StatusEffect;
 import mindustry.world.Block;
 import mindustry.world.consumers.Consume;
-import mindustry.world.meta.Stat;
-import mindustry.world.meta.StatUnit;
+import mindustry.world.meta.*;
 
 
 public class StateFieldProjection extends Block {
@@ -34,6 +34,7 @@ public class StateFieldProjection extends Block {
         super.setStats();
         stats.add(Stat.reload, (float)((int)(reload / 60.0F)), StatUnit.seconds);
         stats.add(Stat.range, range / 8.0F, StatUnit.blocks);
+        stats.add(new Stat("statusEffect"), StatValues.statusEffects(new Seq<>(statusEffect.getClass())));
     }
     public void drawPlace(int x, int y, int rotation, boolean valid) {
         super.drawPlace(x, y, rotation, valid);
