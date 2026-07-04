@@ -1542,7 +1542,7 @@ public class ExampleJavaMod extends Mod{
                 rotation=0;
                 rotateSpeed=0f;
                 color=tC;
-                radius=10;
+                radius=14;
                 stroke=0;
                 strokeTo=2;
 //                layer=Layer.effect;
@@ -1554,7 +1554,7 @@ public class ExampleJavaMod extends Mod{
                 rotation=180;
                 rotateSpeed=0f;
                 color=tC;
-                radius=10;
+                radius=14;
                 stroke=0;
                 strokeTo=2;
 //                layer=Layer.effect;
@@ -1565,7 +1565,7 @@ public class ExampleJavaMod extends Mod{
                 rotation=0;
                 rotateSpeed=0f;
                 color=tC;
-                radius=10;
+                radius=14;
                 stroke=0;
                 strokeTo=2;
 //                layer=Layer.effect;
@@ -1579,27 +1579,28 @@ public class ExampleJavaMod extends Mod{
                 stroke=0;
                 strokeTo=2;
                 triLength=0;
-                triLengthTo=17;
-                radius=14;
+                triLengthTo=18;
+                radius=11;
                 y=0;
-                haloRadius=20;
+                haloRadius=23;
 //                layer=Layer.effect;
             }},new ShapePart(){{
                 progress=haloProgress;
-                circle=true;
+                circle=false;
                 hollow=true;
                 rotation=0;
-                rotateSpeed=0f;
+                rotateSpeed=3.5f;
                 color=tC;
                 radius=12;
                 stroke=0;
                 strokeTo=2;
+                sides=3;
 //                layer=Layer.effect;
             }});}};
             shoot=new ShootAlternate(){{
                 spread=6f;
-                shots=4;
-                barrels=2;
+                shots=2;
+                barrels=4;
             }};
         }};
         ModTurrets.end=new ItemTurret("end"){{
