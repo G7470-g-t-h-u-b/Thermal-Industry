@@ -1005,6 +1005,9 @@ public class ExampleJavaMod extends Mod{
             requirements(Category.turret,with(Items.titanium,80,Items.graphite,60,Items.silicon,50,ModItems.ferrum,100));
 
             ammo(Items.graphite,new FlakBulletType(8f,40){{
+                collidesAir=true;
+                collidesGround=true;
+                collides=true;
                 splashDamage=35;
                 splashDamageRadius=3.5f*8;
                 knockback=0.3f;
@@ -1025,6 +1028,9 @@ public class ExampleJavaMod extends Mod{
                 width=8;
                 height=2.5f*8;
             }},Items.pyratite,new FlakBulletType(8f,55f){{
+                collidesAir=true;
+                collidesGround=true;
+                collides=true;
                 splashDamage=50f;
                 splashDamageRadius=3.7f*8;
                 knockback=0.4f;
