@@ -16,6 +16,7 @@ import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.ExplosionEffect;
 import mindustry.entities.effect.MultiEffect;
+import mindustry.entities.effect.ParticleEffect;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.ShootAlternate;
 import mindustry.entities.pattern.ShootPattern;
@@ -236,6 +237,7 @@ public class ExampleJavaMod extends Mod{
             consumeItems(ItemStack.with(Items.silicon,4,ModItems.zinc,2));
             consumeLiquids(LiquidStack.with(Liquids.water,0.1f));
             consumePower(3f);
+            itemCapacity=20;
             outputItems=new ItemStack[]{new ItemStack(ModItems.siliconSteel,10)};
         }};
         ModBlocks.electrolyticSeparator=new GenericCrafter("electrolytic-separator"){{
@@ -994,6 +996,59 @@ public class ExampleJavaMod extends Mod{
             }};
         }};
         //3x3-Item
+        ModTurrets.kuolei=new ItemTurret("kuolei"){{//todo:爆炸混合物、硅钢、合金
+            size=3;
+            reload=30;
+            maxAmmo=60;
+            range=40*8;
+            shootSound=Sounds.shootScathe;
+            requirements(Category.turret,with(Items.titanium,80,Items.graphite,60,Items.silicon,50,ModItems.ferrum,100));
+
+            ammo(Items.graphite,new FlakBulletType(8f,40){{
+                splashDamage=35;
+                splashDamageRadius=3.5f*8;
+                knockback=0.3f;
+                lifetime=55;
+                shootEffect=Fx.shootBig2;
+                smokeEffect=Fx.shootSmallFlame;
+                trailLength=9;
+                trailWidth=1.8f;
+                trailColor=Color.white.a(0.8f);
+                trailChance=0.8f;
+                trailEffect=ModFx.kuoleiTrailFx;
+                hitEffect=Fx.flakExplosionBig;
+                sprite="thermal-industry-missile-1";
+                backColor=Pal.graphiteAmmoBack;
+                hitColor=Pal.graphiteAmmoFront;
+                frontColor=Pal.darkerGray;
+                ammoMultiplier=2;
+            }},Items.pyratite,new FlakBulletType(8f,55f){{
+                splashDamage=50f;
+                splashDamageRadius=3.7f*8;
+                knockback=0.4f;
+                lifetime=55;
+                shootEffect=Fx.shootBig2;
+                smokeEffect=Fx.shootSmallFlame;
+                trailLength=9;
+                trailWidth=1.8f;
+                trailColor=Color.white.a(0.8f);
+                trailChance=0.8f;
+                trailEffect=ModFx.kuoleiTrailFx;
+                hitEffect=Fx.flakExplosionBig;
+                sprite="thermal-industry-missile-1";
+                backColor=Pal.lightPyraFlame;
+                hitColor=Pal.lightPyraFlame;
+                frontColor=Pal.darkerGray;
+                ammoMultiplier=4;
+            }});
+
+            shoot=new ShootAlternate(){{
+                shots=12;
+                shotDelay=1.5f;
+                barrels=4;
+                spread=1.6f;
+            }};
+        }};
         ModTurrets.puncture=new ItemTurret("puncture"){{
             inaccuracy=0.1f;
             size=3;
@@ -2257,7 +2312,9 @@ public class ExampleJavaMod extends Mod{
                 });
                 node(ModTurrets.longsword);
                 node(ModTurrets.blaze,()->{
-                    node(ModTurrets.magneticSpear);
+                    node(ModTurrets.magneticSpear,()->{
+                        node(ModTurrets.kuolei);
+                    });
                     node(ModTurrets.salvoAlpha);
                 });
                 node(ModTurrets.puncture,()->{

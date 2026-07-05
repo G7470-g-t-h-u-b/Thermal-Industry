@@ -4,6 +4,7 @@ import arc.graphics.Color;
 import arc.graphics.g2d.Draw;
 import arc.graphics.g2d.Lines;
 import arc.math.Angles;
+import arc.math.Interp;
 import arc.math.Mathf;
 import mindustry.entities.Effect;
 import mindustry.entities.effect.*;
@@ -33,7 +34,7 @@ public class ModFx {
         Angles.randLenVectors(e.id, 7, 25.0F * e.finpow(), e.rotation, 50.0F, (x, y) -> Lines.lineAngle(e.x + x, e.y + y, Mathf.angle(x, y), e.fin() * 5.0F + 2.0F));
     });
     public static final Effect hitPhantomSpirit=new ExplosionEffect(){{
-        waveColor=sparkColor=smokeColor=Color.black.a(254);
+        waveColor=sparkColor=smokeColor=Color.black;
         lifetime=34;
         waveLife=16;
         waveRadBase=1.5f;
@@ -43,5 +44,15 @@ public class ModFx {
         sparkLen=15;
         smokes=8;
         smokeRad=11;
+    }};
+    public static final ParticleEffect kuoleiTrailFx=new ParticleEffect(){{
+        colorTo=TIColor.smoke1;
+        lifetime=45;
+        length=35f;
+        cone=0;
+        interp=Interp.pow10In;
+        particles=3;
+        sizeFrom=1.8f;
+        sizeTo=2f;
     }};
 }

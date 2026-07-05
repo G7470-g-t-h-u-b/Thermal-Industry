@@ -8,4 +8,5 @@ public class TIColor {
     public static Color bronzeDark=Color.valueOf("8f5039");
     public static Color feLight=Color.valueOf("afb0c7");
     public static Color feColor=Color.valueOf("7c8499");
+    public static Color smoke1=Color.HSVtoRGB(0,0,51,220);
 }
