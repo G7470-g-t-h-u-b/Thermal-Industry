@@ -998,7 +998,7 @@ public class ExampleJavaMod extends Mod{
         //3x3-Item
         ModTurrets.kuolei=new ItemTurret("kuolei"){{//todo:爆炸混合物、硅钢、合金
             size=3;
-            reload=30;
+            reload=75;
             maxAmmo=60;
             range=40*8;
             shootSound=Sounds.shootScathe;
@@ -1022,6 +1022,8 @@ public class ExampleJavaMod extends Mod{
                 hitColor=Pal.graphiteAmmoFront;
                 frontColor=Pal.darkerGray;
                 ammoMultiplier=2;
+                width=8;
+                height=2.5f*8;
             }},Items.pyratite,new FlakBulletType(8f,55f){{
                 splashDamage=50f;
                 splashDamageRadius=3.7f*8;
@@ -1044,7 +1046,7 @@ public class ExampleJavaMod extends Mod{
 
             shoot=new ShootAlternate(){{
                 shots=12;
-                shotDelay=1.5f;
+                shotDelay=2.8f;
                 barrels=4;
                 spread=1.6f;
             }};

@@ -47,7 +47,7 @@ public class ModFx {
     }};
     public static final ParticleEffect kuoleiTrailFx=new ParticleEffect(){{
         colorTo=TIColor.smoke1;
-        lifetime=45;
+        lifetime=35;
         length=35f;
         cone=0;
         interp=Interp.pow10In;
