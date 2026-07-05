@@ -1048,6 +1048,8 @@ public class ExampleJavaMod extends Mod{
                 hitColor=Pal.lightPyraFlame;
                 frontColor=Pal.darkerGray;
                 ammoMultiplier=4;
+                width=8;
+                height=2.5f*8;
             }});
 
             shoot=new ShootAlternate(){{
