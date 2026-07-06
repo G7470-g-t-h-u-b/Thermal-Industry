@@ -2351,7 +2351,9 @@ public class ExampleJavaMod extends Mod{
                     node(ModBlocks.highTemperatureMeltingFurnace, () -> {
                         node(ModBlocks.highSpeedDisassembler,()->{
                             node(ModBlocks.bronzeSmelter,()->{
-                                node(ModBlocks.blastFurnace);
+                                node(ModBlocks.blastFurnace,()->{
+                                    node(ModBlocks.ironExtractor);
+                                });
                             });
                         });
                     });
