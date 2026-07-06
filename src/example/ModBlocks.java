@@ -171,8 +171,8 @@ public class ModBlocks {
             outputItems=ItemStack.with(ModItems.ferrum,1);
             requirements(Category.crafting,ItemStack.with(Items.lead,40,ModItems.siliconSteel,30,ModItems.bronze,40,Items.titanium,30));
         }};
-        //tietiquji
         ironExtractor=new GenericCrafter("iron-extractor"){{
+            requirements(Category.crafting,ItemStack.with(Items.copper,40,Items.titanium,30,Items.graphite,30));
             size=2;
             consumePower(3f);
             consumeLiquids(LiquidStack.with(Liquids.slag,0.2f));
