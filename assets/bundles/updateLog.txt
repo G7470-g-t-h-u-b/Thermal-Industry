@@ -32,6 +32,7 @@ todo:{   预计完成时间:114514年后
         [=]工业炸药 explosiveness 2.8f->3f(alpha2)
         [=]工业炸药 flammability 1.8f->1.6f(alpha2)
     Blocks:
+        [+]铁提取机(alpha28)
         [+]相织布传送带(alpha7)
         [+]部分地板科技(alpha4)
         [+]小型装甲电池(alpha19)

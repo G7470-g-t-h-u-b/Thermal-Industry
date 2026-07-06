@@ -124,6 +124,7 @@ public class ModBlocks {
 
     public static RemotAccessBox remotAccessBox;
     public static StorageBlock armoredContainer;
+    public static GenericCrafter ironExtractor;
     public static void load1(){
         glassAssemblyMachine=new GenericCrafter("glass-assembly-machine"){{
             size=2;
@@ -169,6 +170,14 @@ public class ModBlocks {
             consumePower(3.5f);
             outputItems=ItemStack.with(ModItems.ferrum,1);
             requirements(Category.crafting,ItemStack.with(Items.lead,40,ModItems.siliconSteel,30,ModItems.bronze,40,Items.titanium,30));
+        }};
+        //tietiquji
+        ironExtractor=new GenericCrafter("iron-extractor"){{
+            size=2;
+            consumePower(3f);
+            consumeLiquids(LiquidStack.with(Liquids.slag,0.2f));
+            craftTime=120;
+            outputItems=ItemStack.with(ModItems.ferrum,1);
         }};
         armoredContainer=new StorageBlock("armored-container"){{
             size=2;

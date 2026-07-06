@@ -997,6 +997,9 @@ public class ExampleJavaMod extends Mod{
         }};
         //3x3-Item
         ModTurrets.kuolei=new ItemTurret("kuolei"){{//todo:爆炸混合物、硅钢、合金
+            inaccuracy=4;
+            consumeAmmoOnce=true;
+            ammoPerShot=12;
             size=3;
             reload=75;
             maxAmmo=60;
