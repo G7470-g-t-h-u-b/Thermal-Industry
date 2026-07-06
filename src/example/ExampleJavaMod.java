@@ -177,11 +177,11 @@ public class ExampleJavaMod extends Mod{
         ModItems.ferrum =new Item("ferrum",Color.HSVtoRGB(233,16,25));
         ModItems.metaglassBottle=new Item("metaglass-bottle",Color.HSVtoRGB(240,7,88));
         ModItems.wateryMetaglassBottle=new Item("watery-metaglass-bottle",Color.HSVtoRGB(232,52,91));
-        ModItems.frostAlloy=new Item("frost-alloy",Color.HSVtoRGB(196,46,89));
         ModItems.canyonBattery=new Item("canyon-battery",Color.HSVtoRGB(232,47,77)){{charge=0.4f;}};
         ModItems.archipelagoBattery=new Item("archipelago-battery",Color.HSVtoRGB(97,58,75)){{charge=0.6f;}};
         ModItems.heatConductionComponent=new Item("heat-conduction-component",Color.HSVtoRGB(8,49,92));
         ModItems.processor=new Item("processor",Color.HSVtoRGB(226,24,65));
+        ModItems.radioactiveFuelAssembly=new Item("radioactive-fuel-assembly",Color.HSVtoRGB(300,2,61)){{radioactivity=2f;}};
         ModLiquids.lava=new Liquid("lava",Color.HSVtoRGB(17,60,100)){{
             temperature=1.4f;
             viscosity=0.75f;
@@ -1003,7 +1003,7 @@ public class ExampleJavaMod extends Mod{
             size=3;
             reload=75;
             maxAmmo=60;
-            range=40*8;
+            range=45*8;
             shootSound=Sounds.shootScathe;
             requirements(Category.turret,with(Items.titanium,80,Items.graphite,60,Items.silicon,50,ModItems.ferrum,100));
 
@@ -1014,7 +1014,7 @@ public class ExampleJavaMod extends Mod{
                 splashDamage=35;
                 splashDamageRadius=3.5f*8;
                 knockback=0.3f;
-                lifetime=55;
+                lifetime=60;
                 shootEffect=Fx.shootBig2;
                 smokeEffect=Fx.shootSmallFlame;
                 trailLength=9;
@@ -1029,7 +1029,7 @@ public class ExampleJavaMod extends Mod{
                 frontColor=Pal.darkerGray;
                 ammoMultiplier=2;
                 width=8;
-                height=2.5f*8;
+                height=2.8f*8;
             }},Items.pyratite,new FlakBulletType(8f,55f){{
                 collidesAir=true;
                 collidesGround=true;
@@ -1037,7 +1037,7 @@ public class ExampleJavaMod extends Mod{
                 splashDamage=50f;
                 splashDamageRadius=3.7f*8;
                 knockback=0.4f;
-                lifetime=55;
+                lifetime=60;
                 shootEffect=Fx.shootBig2;
                 smokeEffect=Fx.shootSmallFlame;
                 trailLength=9;
@@ -1052,14 +1052,14 @@ public class ExampleJavaMod extends Mod{
                 frontColor=Pal.darkerGray;
                 ammoMultiplier=4;
                 width=8;
-                height=2.5f*8;
+                height=2.8f*8;
             }});
 
             shoot=new ShootAlternate(){{
                 shots=12;
                 shotDelay=2.8f;
                 barrels=4;
-                spread=1.6f;
+                spread=3.6f;
             }};
         }};
         ModTurrets.puncture=new ItemTurret("puncture"){{

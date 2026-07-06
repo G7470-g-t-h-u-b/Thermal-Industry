@@ -15,12 +15,12 @@ public class ModItems {
     public static Item ferrum;
     public static Item metaglassBottle;
     public static Item wateryMetaglassBottle;
-    public static Item frostAlloy;
     public static Item canyonBattery;
     public static Item archipelagoBattery;
     public static Item heatConductionComponent;
     public static Item processor;
     public static Item bronze;
+    public static Item radioactiveFuelAssembly;
     public static void load2(){
         ModItems.hematite=new Item("hematite",Color.HSVtoRGB(11,35,49)){{
             hardness=3;
