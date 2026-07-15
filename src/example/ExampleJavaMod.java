@@ -16,7 +16,6 @@ import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.ExplosionEffect;
 import mindustry.entities.effect.MultiEffect;
-import mindustry.entities.effect.ParticleEffect;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.ShootAlternate;
 import mindustry.entities.pattern.ShootPattern;
@@ -25,9 +24,7 @@ import mindustry.game.EventType.*;
 import mindustry.game.Objectives;
 import mindustry.gen.*;
 import mindustry.graphics.Drawf;
-import mindustry.graphics.Layer;
 import mindustry.graphics.Pal;
-import mindustry.graphics.Trail;
 import mindustry.graphics.g3d.*;
 import mindustry.maps.planet.AsteroidGenerator;
 import mindustry.maps.planet.SerpuloPlanetGenerator;
@@ -697,7 +694,7 @@ public class ExampleJavaMod extends Mod{
             coolant=consumeCoolant(1.4f);
             ammoUseEffect=Fx.casing2;
         }};
-        ModTurrets.magneticSpear=new ItemTurret("magnetic-spear"){{
+        ModTurrets.magneticSpear=new ItemTurret("magnetic-spear"){{//todo-1-2-1
             requirements(Category.turret,ItemStack.with(Items.lead,60,Items.graphite,30,Items.silicon,40,Items.metaglass,50));
             maxAmmo=60;
             size=2;
@@ -1740,10 +1737,10 @@ public class ExampleJavaMod extends Mod{
             shootSound=Sounds.shootMalign;
             final float circleRotSpeed=3.5f;
             final DrawPart.PartProgress haloProgress = DrawPart.PartProgress.warmup;
-            final float circleY = 20f;
-            final DrawPart.PartProgress circleProgress = DrawPart.PartProgress.warmup.delay(0.9F);
+//            final float circleY = 20f;
+//            final DrawPart.PartProgress circleProgress = DrawPart.PartProgress.warmup.delay(0.9F);
             final Color turretColor=Pal.techBlue;
-            final float circleRad = 11.0F;
+//            final float circleRad = 11.0F;
             final float circleStroke = 1.6F;
             final float haloY=-12f;
 //            shootSound=Sounds.malignShoot;
@@ -2001,9 +1998,9 @@ public class ExampleJavaMod extends Mod{
             size=3;
             final float circleY = 10f;
             final DrawPart.PartProgress circleProgress = DrawPart.PartProgress.warmup.delay(0.9F);
-            final float circleRad = 11.0F;
+//            final float circleRad = 11.0F;
             final float circleStroke = 1.4F;
-            final float haloY=-10f;
+//            final float haloY=-10f;
             final float circleRotSpeed=3.5f;
             shootSound=Sounds.shootCorvus;
             requirements(Category.turret,with(Items.thorium,40,Items.titanium,35,Items.silicon,20,Items.metaglass,20));
@@ -2477,6 +2474,7 @@ public class ExampleJavaMod extends Mod{
             node(ModSectorPresets.Sector15);
         });
 
+        ModTeachTree.load();
 
         ModPlanets.kroos.techTree=TechTree.nodeRoot("kroos",ModBlocks.sentinelCore,()->{});
 //        ModPlanets.kroos.techTree= TechTree.nodeRoot("eee", Blocks.coreShard, () -> {

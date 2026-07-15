@@ -3,6 +3,11 @@ package example;
 import arc.graphics.Color;
 import mindustry.type.Item;
 
+/*
+(多方块工厂可用后)
+todo:(合金、塑钢)破甲弹、穿甲弹等
+*/
+
 public class ModItems {
     public static Item industrialExplosives;
     public static Item tin;
@@ -20,7 +25,7 @@ public class ModItems {
     public static Item heatConductionComponent;
     public static Item processor;
     public static Item bronze;
-    public static Item radioactiveFuelAssembly;
+    public static Item radioactiveFuelAssembly;//todo
     public static void load2(){
         ModItems.hematite=new Item("hematite",Color.HSVtoRGB(11,35,49)){{
             hardness=3;

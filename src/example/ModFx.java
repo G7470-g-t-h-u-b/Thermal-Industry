@@ -45,7 +45,7 @@ public class ModFx {
         smokes=8;
         smokeRad=11;
     }};
-    public static final ParticleEffect kuoleiTrailFx=new ParticleEffect(){{
+    public static final ParticleEffect kuoleiTrailFx=new ParticleEffect(){{//todo:特效修复
         colorTo=TIColor.smoke1;
         lifetime=35;
         length=35f;
