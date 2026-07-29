@@ -7,6 +7,7 @@
     Items:
         [+]实验型爆炸物->工业炸药(alpha7)
         [+]放射性燃料组件(alpha29)(todo)
+        [+]天际合金(alpha31)
         [=]工业炸药 explosiveness 2.8f->3f(alpha2)
         [=]工业炸药 flammability 1.8f->1.6f(alpha2)
     Blocks:
@@ -17,6 +18,7 @@
         [+]小型发射台、接收台(alpha5)
         [+]远程访问箱(alpha7)
         [+]阔雷(alpha26)
+        [+]废料工厂(alpha31)
         [=]寒霜特效修改(alpha1,2)
         [=]重绘金矿、锌矿贴图(alpha6)
         [=]大硅钢机itemCapacity 10->20(alpha25)

@@ -26,6 +26,7 @@ public class ModItems {
     public static Item processor;
     public static Item bronze;
     public static Item radioactiveFuelAssembly;//todo
+    public static Item skyAlloy;
     public static void load2(){
         ModItems.hematite=new Item("hematite",Color.HSVtoRGB(11,35,49)){{
             hardness=3;
@@ -47,6 +48,9 @@ public class ModItems {
         }};
         bronze=new Item("bronze", Color.HSVtoRGB(23,57,77)){{
             cost=1.2f;
+        }};
+        skyAlloy=new Item("sky-alloy",Color.HSVtoRGB(191,100,94)){{
+
         }};
         ModItems.siliconSteel=new Item("silicon-steel",Color.HSVtoRGB(240,14,53)){{cost=1f;}};
     }

@@ -172,7 +172,7 @@ public class ModBlocks {
             requirements(Category.crafting,ItemStack.with(Items.lead,40,ModItems.siliconSteel,30,ModItems.bronze,40,Items.titanium,30));
         }};
         ironExtractor=new GenericCrafter("iron-extractor"){{
-            requirements(Category.crafting,ItemStack.with(Items.copper,40,Items.titanium,30,Items.graphite,30));
+            requirements(Category.crafting,ItemStack.with(Items.copper,40,Items.titanium,30,Items.graphite,30,ModItems.ferrum,60,ModItems.siliconSteel,30));
             size=2;
             consumePower(3f);
             consumeLiquids(LiquidStack.with(Liquids.slag,0.2f));
@@ -200,7 +200,7 @@ public class ModBlocks {
             size=2;
             requirements(Category.distribution,ItemStack.with(Items.silicon,40,Items.titanium,40,ModItems.processor,20,ModItems.ferrum,30));
             consumePower(2f);
-            unitBuildTime=60*15;
+            unitBuildTime=60*10;
             consumeLiquid(Liquids.hydrogen,0.2f);
             itemCapacity=200;
 //            unitType=ModUnits.drone;
@@ -211,6 +211,37 @@ public class ModBlocks {
             itemCapacity=200;
         }};
     }
+
+
+    public static Conveyor scrapConveyor;
+    public static GenericCrafter scrapGraphitePress;
+    public static GenericCrafter scrapSiliconSmelter;
+
+    public static void loadScrap(){
+        scrapConveyor=new Conveyor("scrap-conveyor"){{//废料传送带
+            requirements(Category.distribution,ItemStack.with(Items.scrap,1));
+            size=1;
+            speed=0.046f;
+        }};
+
+        scrapGraphitePress=new GenericCrafter("scrap-graphite-press"){{
+            requirements(Category.crafting,ItemStack.with(Items.copper,20,Items.scrap,40));
+
+            consumeItems(ItemStack.with(Items.coal,2));
+            consumePower(0.25f);
+            craftTime=45f;
+            outputItems=ItemStack.with(Items.graphite,1);
+        }};
+        scrapSiliconSmelter=new GenericCrafter("scrap-silicon-smelter"){{//废料硅冶炼厂
+            requirements(Category.crafting,ItemStack.with(Items.copper,30,Items.scrap,60));
+            size=2;
+            consumeItems(with(Items.coal,2,Items.scrap,1));
+            consumePower(0.5f);
+            craftTime=60f;
+            drawer=new DrawMulti(new DrawDefault(),new DrawFlame(Color.valueOf("ffef99")));
+        }};
+    }
+
 
     public static Floor hematiteFloor;
     public static Floor tuffFloor;
@@ -250,7 +281,7 @@ public class ModBlocks {
             placeableLiquid=true;
             size=2;
             requirements(Category.defense,ItemStack.with(ModItems.ferrum,24));
-            health=3000;
+            health=3100;
             armor=14;
         }};
     }

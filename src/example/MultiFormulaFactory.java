@@ -185,7 +185,7 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
             this.drawItemSelection(outputItem);
         }
 
-        public void buildConfiguration(Table table) {//坏了.
+        public void buildConfiguration(Table table) {
             Seq<Item> items=Seq.with(plans).map(i ->i.item.item).removeAll(i->i.unlockedNow() && !i.isBanned());
 
             if (items.any()){
@@ -206,8 +206,9 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
             super.draw();
         }
 
+        @Override
         public void updateTile() {
-            if (!configurable) {//坏了坏了
+            if (!configurable) {
                 currentPlan = 0;
             }
             if (currentPlan < 0 || currentPlan >= plans.size) {
