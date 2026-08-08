@@ -18,7 +18,7 @@ public class ModItems {
     public static Item rock;
     public static Item hematite;
     public static Item ferrum;
-    public static Item coke;
+//    public static Item coke;
     public static Item steel;
     public static Item metaglassBottle;
     public static Item wateryMetaglassBottle;

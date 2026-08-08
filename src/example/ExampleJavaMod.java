@@ -176,7 +176,7 @@ public class ExampleJavaMod extends Mod{
         }};
         ModItems.rock=new Item("rock",Color.HSVtoRGB(240,7,50));
         ModItems.load2();
-        ModItems.coke=new Item("coke"){{flammability=1.4f;}};
+//        ModItems.coke=new Item("coke"){{flammability=1.4f;}};
         ModItems.ferrum =new Item("ferrum",Color.HSVtoRGB(233,16,25));
         ModItems.steel=new Item("steel",Color.HSVtoRGB(0,0,33)){{cost=2f;}};
         ModItems.metaglassBottle=new Item("metaglass-bottle",Color.HSVtoRGB(240,7,88));
@@ -2504,9 +2504,9 @@ public class ExampleJavaMod extends Mod{
 
         ModTeachTree.load();
 
-        new ResearchNode("test-node");
+        ResearchNode testNode=new ResearchNode("test-node");
         ModPlanets.kroos.techTree=TechTree.nodeRoot("kroos",ModBlocks.sentinelCore,()->{
-//            node();
+            node(testNode);
         });
     }
 }

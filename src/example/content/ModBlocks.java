@@ -183,12 +183,15 @@ public class ModBlocks {
             craftTime=120;
             outputItems=ItemStack.with(ModItems.ferrum,1);
         }};
-        steelForgingFurnace=new GenericCrafter("steel-Forging-Furnace"){{
+        steelForgingFurnace=new GenericCrafter("steel-forging-furnace"){{
             requirements(Category.crafting,ItemStack.with(Items.graphite,50,ModItems.siliconSteel,30,ModItems.ferrum,50));
             size=3;
             consumePower(2);
             itemCapacity=20;
-//            consumeItems()
+            drawer=new DrawMulti(new DrawDefault(),new DrawFlame());
+            craftTime=120;
+            consumeItems(ItemStack.with(Items.coal,2,ModItems.ferrum,5));
+            outputItems=ItemStack.with(ModItems.steel);
         }};
         armoredContainer=new StorageBlock("armored-container"){{
             size=2;
