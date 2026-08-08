@@ -191,7 +191,7 @@ public class ModBlocks {
             drawer=new DrawMulti(new DrawDefault(),new DrawFlame());
             craftTime=120;
             consumeItems(ItemStack.with(Items.coal,2,ModItems.ferrum,5));
-            outputItems=ItemStack.with(ModItems.steel);
+            outputItems=ItemStack.with(ModItems.steel,1);
         }};
         armoredContainer=new StorageBlock("armored-container"){{
             size=2;
