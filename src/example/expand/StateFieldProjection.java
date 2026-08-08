@@ -1,8 +1,9 @@
-package example;
+package example.expand;
 
 import arc.math.Mathf;
 import arc.struct.Seq;
 import arc.util.Tmp;
+import example.content.TIColor;
 import mindustry.Vars;
 import mindustry.content.Fx;
 import mindustry.entities.Effect;

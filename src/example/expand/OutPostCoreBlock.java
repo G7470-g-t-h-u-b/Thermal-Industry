@@ -1,4 +1,4 @@
-package example;
+package example.expand;
 
 import mindustry.game.Team;
 import mindustry.world.Block;

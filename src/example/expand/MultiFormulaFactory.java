@@ -1,4 +1,4 @@
-package example;
+package example.expand;
 
 import arc.Core;
 import arc.graphics.Color;

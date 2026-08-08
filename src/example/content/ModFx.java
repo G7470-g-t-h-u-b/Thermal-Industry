@@ -1,4 +1,4 @@
-package example;
+package example.content;
 
 import arc.graphics.Color;
 import arc.graphics.g2d.Draw;

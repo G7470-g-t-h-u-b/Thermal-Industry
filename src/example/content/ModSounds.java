@@ -1,4 +1,4 @@
-package example;
+package example.content;
 
 import arc.audio.Sound;
 import arc.files.Fi;

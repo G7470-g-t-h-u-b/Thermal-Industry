@@ -1,4 +1,4 @@
-package example;
+package example.content;
 
 import arc.graphics.Color;
 import mindustry.type.Item;
@@ -18,6 +18,8 @@ public class ModItems {
     public static Item rock;
     public static Item hematite;
     public static Item ferrum;
+    public static Item coke;
+    public static Item steel;
     public static Item metaglassBottle;
     public static Item wateryMetaglassBottle;
     public static Item canyonBattery;
@@ -28,7 +30,7 @@ public class ModItems {
     public static Item radioactiveFuelAssembly;//todo
     public static Item skyAlloy;
     public static void load2(){
-        ModItems.hematite=new Item("hematite",Color.HSVtoRGB(11,35,49)){{
+        ModItems.hematite=new Item("hematite",Color.HSVtoRGB(11,35,49)){{//赤铁矿
             hardness=3;
             cost=1.2f;
         }};

@@ -1,6 +1,9 @@
-package example;
+package example.content;
 
 import arc.graphics.Color;
+import example.expand.MultiFormulaFactory;
+import example.expand.RemotAccessBox;
+import example.expand.StateFieldProjection;
 import mindustry.content.*;
 import mindustry.type.Category;
 import mindustry.type.ItemStack;
@@ -86,7 +89,7 @@ public class ModBlocks {
             health=90;
             armor=18;
             consumePowerBuffered(4000f);
-            requirements(Category.power,ItemStack.with(Items.titanium,30,Items.lead,50,ModItems.ferrum,40));
+            requirements(Category.power,ItemStack.with(Items.titanium,30,Items.lead,50, ModItems.ferrum,40));
         }};
     }
 
@@ -125,6 +128,7 @@ public class ModBlocks {
     public static RemotAccessBox remotAccessBox;
     public static StorageBlock armoredContainer;
     public static GenericCrafter ironExtractor;
+    public static GenericCrafter steelForgingFurnace;
     public static void load1(){
         glassAssemblyMachine=new GenericCrafter("glass-assembly-machine"){{
             size=2;
@@ -178,6 +182,13 @@ public class ModBlocks {
             consumeLiquids(LiquidStack.with(Liquids.slag,0.2f));
             craftTime=120;
             outputItems=ItemStack.with(ModItems.ferrum,1);
+        }};
+        steelForgingFurnace=new GenericCrafter("steel-Forging-Furnace"){{
+            requirements(Category.crafting,ItemStack.with(Items.graphite,50,ModItems.siliconSteel,30,ModItems.ferrum,50));
+            size=3;
+            consumePower(2);
+            itemCapacity=20;
+//            consumeItems()
         }};
         armoredContainer=new StorageBlock("armored-container"){{
             size=2;
@@ -238,6 +249,9 @@ public class ModBlocks {
             consumeItems(with(Items.coal,2,Items.scrap,1));
             consumePower(0.5f);
             craftTime=60f;
+
+            outputItems=ItemStack.with(Items.silicon,1);
+
             drawer=new DrawMulti(new DrawDefault(),new DrawFlame(Color.valueOf("ffef99")));
         }};
     }

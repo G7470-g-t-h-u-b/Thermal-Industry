@@ -1,4 +1,4 @@
-package example;
+package example.content;
 
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.blocks.defense.turrets.LiquidTurret;

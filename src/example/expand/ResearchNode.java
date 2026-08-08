@@ -1,4 +1,4 @@
-package example;
+package example.expand;
 import mindustry.graphics.Pal;
 import mindustry.type.Item;
 

@@ -9,6 +9,11 @@ import arc.math.Angles;
 import arc.math.Interp;
 import arc.struct.Seq;
 import arc.util.*;
+import example.content.*;
+import example.expand.MultiFormulaFactory;
+import example.expand.OutPostCoreBlock;
+import example.expand.ResearchNode;
+import example.expand.StateFieldProjection;
 import mindustry.content.*;
 import mindustry.entities.Effect;
 import mindustry.entities.UnitSorts;
@@ -171,7 +176,9 @@ public class ExampleJavaMod extends Mod{
         }};
         ModItems.rock=new Item("rock",Color.HSVtoRGB(240,7,50));
         ModItems.load2();
+        ModItems.coke=new Item("coke"){{flammability=1.4f;}};
         ModItems.ferrum =new Item("ferrum",Color.HSVtoRGB(233,16,25));
+        ModItems.steel=new Item("steel",Color.HSVtoRGB(0,0,33)){{cost=2f;}};
         ModItems.metaglassBottle=new Item("metaglass-bottle",Color.HSVtoRGB(240,7,88));
         ModItems.wateryMetaglassBottle=new Item("watery-metaglass-bottle",Color.HSVtoRGB(232,52,91));
         ModItems.canyonBattery=new Item("canyon-battery",Color.HSVtoRGB(232,47,77)){{charge=0.4f;}};
@@ -738,9 +745,22 @@ public class ExampleJavaMod extends Mod{
                     hitColor=backColor=trailColor=Pal.glassAmmoBack;
                     frontColor=Pal.glassAmmoFront;
                 }};
+            }},Items.titanium,new BasicBulletType(7.6f,24){{
+                lifetime=40;
+                ammoMultiplier=1;
+                shootEffect=t_s;
+                width=6;
+                height=16;
+                hitSize=6;
+                smokeEffect=Fx.shootSmallSmoke;
+                trailWidth=2;
+                trailLength=8;
+                buildingDamageMultiplier=0.4f;
+                hitColor=backColor=trailColor=Pal.techBlue;
+                frontColor=Pal.techBlue;
             }});
             consumePower(0.15f);
-            consumeCoolant(0.2f);
+            consumeLiquid(Liquids.water,0.3f);
         }};
         ModTurrets.longsword=new ItemTurret("longsword"){{
             requirements(Category.turret,ItemStack.with(Items.copper,30,Items.graphite,20,Items.thorium,30,ModItems.bronze,30));

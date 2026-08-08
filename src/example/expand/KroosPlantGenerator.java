@@ -1,4 +1,4 @@
-package example;
+package example.expand;
 
 import mindustry.maps.planet.SerpuloPlanetGenerator;
 
