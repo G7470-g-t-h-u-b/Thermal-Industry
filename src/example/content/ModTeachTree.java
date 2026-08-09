@@ -62,6 +62,6 @@ public class ModTeachTree {
         addToTechNode(ModItems.hematite,ModItems.ferrum);
         addToTechNode(Blocks.siliconSmelter,ModBlocks.scrapSiliconSmelter);
         addToTechNode(Items.scrap,ModItems.rock);
-        addToTechNode(Blocks.blastDrill,basicTerrainModification,ItemStack.with(Items.titanium,2000,Items.silicon,500,ModItems.rock,600,ModItems.ferrum));
+        addToTechNode(Blocks.blastDrill,basicTerrainModification,ItemStack.with(Items.titanium,2000,Items.silicon,500,ModItems.rock,600,ModItems.ferrum,1000));//?
     }
 }
