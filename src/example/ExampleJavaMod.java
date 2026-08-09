@@ -585,14 +585,14 @@ public class ExampleJavaMod extends Mod{
                     }};
                 }};
             }});
-            immunities.addAll(
-                    StatusEffects.wet,StatusEffects.freezing,
-                    StatusEffects.burning,StatusEffects.melting,
-                    StatusEffects.disarmed,StatusEffects.electrified,
-                    StatusEffects.sapped,StatusEffects.slow,
-                    StatusEffects.tarred,StatusEffects.unmoving,
-                    StatusEffects.sporeSlowed,StatusEffects.corroded
-            );
+//            immunities.addAll(
+//                    StatusEffects.wet,StatusEffects.freezing,
+//                    StatusEffects.burning,StatusEffects.melting,
+//                    StatusEffects.disarmed,StatusEffects.electrified,
+//                    StatusEffects.sapped,StatusEffects.slow,
+//                    StatusEffects.tarred,StatusEffects.unmoving,
+//                    StatusEffects.sporeSlowed,StatusEffects.corroded
+//            );
         }};
 
 
