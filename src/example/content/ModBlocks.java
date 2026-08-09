@@ -178,8 +178,8 @@ public class ModBlocks {
         ironExtractor=new GenericCrafter("iron-extractor"){{
             requirements(Category.crafting,ItemStack.with(Items.copper,40,Items.titanium,30,Items.graphite,30,ModItems.ferrum,60,ModItems.siliconSteel,30));
             size=2;
-            consumePower(3f);
-            consumeLiquids(LiquidStack.with(Liquids.slag,0.2f));
+            consumePower(3.5f);
+            consumeLiquids(LiquidStack.with(Liquids.slag,0.4f));
             craftTime=120;
             outputItems=ItemStack.with(ModItems.ferrum,1);
         }};
@@ -191,7 +191,7 @@ public class ModBlocks {
             drawer=new DrawMulti(new DrawDefault(),new DrawFlame());
             craftTime=120;
             consumeItems(ItemStack.with(Items.coal,2,ModItems.ferrum,5));
-            outputItems=ItemStack.with(ModItems.steel,1);
+            outputItems=ItemStack.with(ModItems.steel,5);
         }};
         armoredContainer=new StorageBlock("armored-container"){{
             size=2;

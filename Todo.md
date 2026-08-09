@@ -60,7 +60,7 @@
 
 #### 运输
 
-- [ ] phase-fabric-conveyor(相织布传送带)
+- [x] phase-fabric-conveyor(相织布传送带)
 
 - [ ]
 
@@ -78,7 +78,7 @@
 
 - [ ] water-dispenser(倒水机)
 
-- [ ] iron-extractor(铁提取机)
+- [x] iron-extractor(铁提取机)
 
 - [ ] rock-crusher(岩石粉碎机)
 
