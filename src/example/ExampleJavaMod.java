@@ -2323,10 +2323,10 @@ public class ExampleJavaMod extends Mod{
         ModSectorPresets.t1=new SectorPreset("testSector",ModPlanets.kroos,0){{
             alwaysUnlocked=true;
         }};
-        ModSectorPresets.testSector=new SectorPreset("043", ModPlanets.kroos, 172);
-        ModSectorPresets.t174=new SectorPreset("t174",ModPlanets.kroos,174);
+//        ModSectorPresets.testSector=new SectorPreset("043", ModPlanets.kroos, 172);
+//        ModSectorPresets.t174=new SectorPreset("t174",ModPlanets.kroos,174);
         ModSectorPresets.Sector15=new SectorPreset("15",Planets.serpulo,15);
-        ModSectorPresets.Sector226=new SectorPreset("226",Planets.serpulo,226);
+//        ModSectorPresets.Sector226=new SectorPreset("226",Planets.serpulo,226);
 
 
         nodeRoot("e",Blocks.coreShard,()->{

@@ -58,10 +58,26 @@ public class ModTeachTree {
 //        fe.parent=titanium_;
 //        titanium_.children.add(fe);
 
+
+        addToTechNode(Blocks.titaniumConveyor,ModBlocks.fastItemBridge);
+        addToTechNode(ModBlocks.fastItemBridge,ModBlocks.phaseFabricConveyor);
+
+
         addToTechNode(Items.titanium,ModItems.hematite);
         addToTechNode(ModItems.hematite,ModItems.ferrum);
+        addToTechNode(ModItems.ferrum,ModItems.steel);
+
+        addToTechNode(Items.titanium,ModItems.rock);
+        addToTechNode(ModItems.rock,ModItems.zinc);
+        addToTechNode(ModItems.zinc,ModItems.siliconSteel);
+        addToTechNode(ModItems.rock,ModItems.tin);
+        addToTechNode(ModItems.tin,ModItems.bronze);
+        addToTechNode(ModItems.rock,ModItems.gold);
+
+
         addToTechNode(Blocks.siliconSmelter,ModBlocks.scrapSiliconSmelter);
         addToTechNode(Items.scrap,ModItems.rock);
         addToTechNode(Blocks.blastDrill,basicTerrainModification,ItemStack.with(Items.titanium,2000,Items.silicon,500,ModItems.rock,600,ModItems.ferrum,1000));//?
+        addToTechNode(basicTerrainModification,ModBlocks.explosive);
     }
 }
