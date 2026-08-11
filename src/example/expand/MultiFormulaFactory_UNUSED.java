@@ -1,3 +1,8 @@
+
+
+//[<已废止，使用https://github.com/JojoFR1/MultiCrafter的多配方工厂>]
+
+
 package example.expand;
 
 import arc.Core;
@@ -28,7 +33,7 @@ import mindustry.world.meta.StatValues;
 
 import static mindustry.Vars.state;
 
-public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举啊!
+public class MultiFormulaFactory_UNUSED extends GenericCrafter {//模组，轻而易举啊!
     public DrawBlock drawer = new DrawDefault();
     public int[] capacities = new int[0];
     public Seq<ItemPlan> plans = new Seq<>(10);
@@ -41,7 +46,7 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
     protected ConsumeItems consItems;
     @Nullable
     public LiquidStack[] outputLiquids;
-    public MultiFormulaFactory(String name) {
+    public MultiFormulaFactory_UNUSED(String name) {
         super(name);
         saveConfig=false;
         copyConfig=true;
@@ -56,14 +61,14 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
         rotate = true;
         regionRotated1 = 1;
         commandable = true;
-        config(Integer.class,(MultiFormulaFactory.MultiFormulaFactoryBuild build,Integer i)->{
+        config(Integer.class,(MultiFormulaFactory_UNUSED.MultiFormulaFactoryBuild build, Integer i)->{
             if(!configurable) return;
 
             if (build.currentPlan==i)return;
             build.currentPlan = i < 0 || i >= plans.size ? -1 : i;
             build.progress = 0;
         });
-        config(Item.class, (MultiFormulaFactory.MultiFormulaFactoryBuild build, Item val) -> {
+        config(Item.class, (MultiFormulaFactory_UNUSED.MultiFormulaFactoryBuild build, Item val) -> {
             if(!configurable) return;
 
             int next = plans.indexOf(p -> p.item.item == val);
@@ -87,7 +92,7 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
     public void initCapacities(){
         capacities=new int[Vars.content.items().size];
         itemCapacity=10;
-        for(MultiFormulaFactory.ItemPlan plan : plans){
+        for(MultiFormulaFactory_UNUSED.ItemPlan plan : plans){
             for(ItemStack stack:plan.requirements){
                 capacities[stack.item.id] = Math.max(capacities[stack.item.id], stack.amount * 2);
                 itemCapacity=Math.max(itemCapacity, stack.amount * 2);
@@ -189,7 +194,7 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
             Seq<Item> items=Seq.with(plans).map(i ->i.item.item).removeAll(i->i.unlockedNow() && !i.isBanned());
 
             if (items.any()){
-                ItemSelection.buildTable(MultiFormulaFactory.this, table, items, () -> currentPlan == -1 ? null : plans.get(currentPlan).item.item, item -> configure(plans.indexOf(i -> i.item.item == item)), selectionRows, selectionColumns);
+                ItemSelection.buildTable(MultiFormulaFactory_UNUSED.this, table, items, () -> currentPlan == -1 ? null : plans.get(currentPlan).item.item, item -> configure(plans.indexOf(i -> i.item.item == item)), selectionRows, selectionColumns);
 
                 table.row();
             }else {
@@ -241,8 +246,8 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
         //'ThermalIndustry'(thermal-industry)has caused Mindustry to crash
 
         public void dumpOutputs() {
-            if (MultiFormulaFactory.this.outputItems != null && this.timer(MultiFormulaFactory.this.timerDump, (float)MultiFormulaFactory.this.dumpTime / this.timeScale)) {
-                for(ItemStack output : MultiFormulaFactory.this.outputItems) {
+            if (MultiFormulaFactory_UNUSED.this.outputItems != null && this.timer(MultiFormulaFactory_UNUSED.this.timerDump, (float) MultiFormulaFactory_UNUSED.this.dumpTime / this.timeScale)) {
+                for(ItemStack output : MultiFormulaFactory_UNUSED.this.outputItems) {
                     this.dump(output.item);
                 }
             }
@@ -253,12 +258,12 @@ public class MultiFormulaFactory extends GenericCrafter {//模组，轻而易举
         }
 
         public boolean acceptItem(Building source, Item item) {
-            return this.currentPlan != -1 && this.items.get(item) < this.getMaximumAccepted(item) && Structs.contains(MultiFormulaFactory.this.plans.get(this.currentPlan).requirements, (stack) -> stack.item == item);
+            return this.currentPlan != -1 && this.items.get(item) < this.getMaximumAccepted(item) && Structs.contains(MultiFormulaFactory_UNUSED.this.plans.get(this.currentPlan).requirements, (stack) -> stack.item == item);
         }
 
         @Nullable
         public ItemStack item() {
-            return this.currentPlan == -1 ? null : MultiFormulaFactory.this.plans.get(this.currentPlan).item;
+            return this.currentPlan == -1 ? null : MultiFormulaFactory_UNUSED.this.plans.get(this.currentPlan).item;
         }
 
         @Override

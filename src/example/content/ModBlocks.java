@@ -1,7 +1,11 @@
 package example.content;
 
+import dev.jojofr.multicrafter.type.DrawRecipe;
+import dev.jojofr.multicrafter.type.IOEntry;
+import dev.jojofr.multicrafter.type.Recipe;
+import dev.jojofr.multicrafter.world.MultiCrafterBlock;
 import arc.graphics.Color;
-import example.expand.MultiFormulaFactory;
+import example.expand.MultiFormulaFactory_UNUSED;
 import example.expand.RemotAccessBox;
 import example.expand.StateFieldProjection;
 import mindustry.content.*;
@@ -114,7 +118,7 @@ public class ModBlocks {
     public static BufferedItemBridge fastItemBridge;
     public static CoreBlock outpostCore;
     public static CoreBlock sentinelCore;
-    public static MultiFormulaFactory metalCrusher;
+    public static MultiCrafterBlock metalCrusher;
     public static StateFieldProjection overclockStateFieldProjection;
     public static void load2(){
         Blocks.sand.requirements(Category.effect,ItemStack.with(Items.sand,1000,ModItems.rock,400));

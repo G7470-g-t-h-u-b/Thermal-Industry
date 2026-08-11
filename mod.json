@@ -13,5 +13,7 @@
 
   "minGameVersion": "154",
 
+  "dependencies": ["multicrafter"],
+
   "java": "true"
 }
