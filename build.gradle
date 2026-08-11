@@ -9,13 +9,13 @@ repositories{
     maven{ url = "https://raw.githubusercontent.com/Zelaux/MindustryRepo/master/repository" }
     maven{ url = 'https://www.jitpack.io' }
 
-    maven {url=""}
+//    maven {url="https://github.com/JojoFR1/MultiCrafter/releases/download/v1.4.2/MultiCrafter.jar"}
 
-    ivy {
-        url = "https://github.com/"
-        patternLayout {artifact '/dev/[organisation]/[module]/releases/download/[revision]/MultiCrafter.jar'}
-        metadataSources { artifact() }
-    }
+//    ivy {
+//        url = "https://github.com/"
+//        patternLayout {artifact '/dev/[organisation]/[module]/releases/download/[revision]/MultiCrafter.jar'}
+//        metadataSources { artifact() }
+//    }
 }
 
 java{
@@ -45,7 +45,7 @@ dependencies{
     compileOnly "com.github.Anuken.Arc:arc-core:$mindustryVersion"
     compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
 
-    compileOnly 'JojoFR1:MultiCrafter:v1.4.2'
+//    compileOnly "com.github.JojoFR1.MultiCrafter:v1.4.2"
 
     annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
 }
