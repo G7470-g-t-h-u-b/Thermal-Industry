@@ -209,6 +209,8 @@ public class ExampleJavaMod extends Mod{
         }};//汽油
 
 
+        ModBlocks.loadCopperWalls();
+
         ModBlocks.explosive=new RemoveWall("explosive"){{
             requirements(Category.effect,with(Items.lead,50,Items.pyratite,30,Items.blastCompound,10));
         }};
