@@ -216,10 +216,11 @@ public class ExampleJavaMod extends Mod{
         ModBlocks.load2();
         ModBlocks.loadFloor();
 
-        ModBlocks.loadCopperWalls();
         ModBlocks.loadWall();
 
         ModBlocks.load3();
+
+        ModBlocks.loadCopperWalls();
 
         ModBlocks.laboratory=new GenericCrafter("laboratory"){{
             health=180;
