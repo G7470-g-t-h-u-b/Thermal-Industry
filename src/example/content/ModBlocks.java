@@ -88,8 +88,58 @@ public class ModBlocks {
 
     public static Battery smallArmoredBattery;
 
+    public static Wall exposedCopperWall;//斑驳
+    public static Wall weatheredCopperWall;//锈蚀
+    public static Wall oxidizedCopperWall;//氧化
+
+    //相织布
+    public static Wall copperWallWithPhaseFabric;
+    public static Wall exposedCopperWallWithPhaseFabric;//斑驳
+    public static Wall weatheredCopperWallWithPhaseFabric;//锈蚀
+    public static Wall oxidizedCopperWallWithPhaseFabric;//氧化
     public static void loadCopperWalls(){
 
+        exposedCopperWall=new Wall("exposed-copper-wall"){{
+            requirements(Category.defense,ItemStack.with(Items.copper,5));
+            health=310;
+        }};
+        weatheredCopperWall=new Wall("weathered-copper-wall"){{
+            requirements(Category.defense,ItemStack.with(Items.copper,5));
+            health=300;
+            buildCostMultiplier=0.9f;
+        }};
+        oxidizedCopperWall=new Wall("oxidized-copper-wall"){{
+            requirements(Category.defense,ItemStack.with(Items.copper,5));
+            health=300;
+            buildCostMultiplier=0.8f;
+        }};
+
+        copperWallWithPhaseFabric=new Wall("copper-wall-with-phase-fabric"){{
+            requirements(Category.defense,ItemStack.with(Items.copper,6,Items.phaseFabric,1));
+            health=340;
+            chanceDeflect=10f;
+            flashHit=true;
+        }};
+        exposedCopperWallWithPhaseFabric=new Wall("exposed-copper-wall-with-phase-fabric"){{
+            requirements(Category.defense,ItemStack.with(Items.copper,5,Items.phaseFabric,1));
+            health=320;
+            chanceDeflect=10f;
+            flashHit=true;
+        }};
+        weatheredCopperWallWithPhaseFabric=new Wall("weathered-copper-wall-with-phase-fabric"){{
+            requirements(Category.defense,ItemStack.with(Items.copper,5,Items.phaseFabric,1));
+            health=310;
+            buildCostMultiplier=0.9f;
+            chanceDeflect=10f;
+            flashHit=true;
+        }};
+        oxidizedCopperWallWithPhaseFabric=new Wall("oxidized-copper-wall-with-phase-fabric"){{//涂相织布的氧化铜墙
+            requirements(Category.defense,ItemStack.with(Items.copper,5,Items.phaseFabric,1));
+            health=310;
+            buildCostMultiplier=0.8f;
+            chanceDeflect=10f;
+            flashHit=true;
+        }};
     }
     public static void loadBattery(){
         smallArmoredBattery=new Battery("small-armored-battery"){{
