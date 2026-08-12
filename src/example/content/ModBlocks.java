@@ -1,9 +1,9 @@
 package example.content;
 
-import dev.jojofr.multicrafter.type.DrawRecipe;
-import dev.jojofr.multicrafter.type.IOEntry;
-import dev.jojofr.multicrafter.type.Recipe;
-import dev.jojofr.multicrafter.world.MultiCrafterBlock;
+//import dev.jojofr.multicrafter.type.DrawRecipe;
+//import dev.jojofr.multicrafter.type.IOEntry;
+//import dev.jojofr.multicrafter.type.Recipe;
+//import dev.jojofr.multicrafter.world.MultiCrafterBlock;
 import arc.graphics.Color;
 import example.expand.MultiFormulaFactory_UNUSED;
 import example.expand.RemotAccessBox;
@@ -87,6 +87,10 @@ public class ModBlocks {
     public static Conveyor phaseFabricConveyor;
 
     public static Battery smallArmoredBattery;
+
+    public static void loadCopperWalls(){
+
+    }
     public static void loadBattery(){
         smallArmoredBattery=new Battery("small-armored-battery"){{
             size=1;
@@ -118,7 +122,7 @@ public class ModBlocks {
     public static BufferedItemBridge fastItemBridge;
     public static CoreBlock outpostCore;
     public static CoreBlock sentinelCore;
-    public static MultiCrafterBlock metalCrusher;
+//    public static MultiCrafterBlock metalCrusher;
     public static StateFieldProjection overclockStateFieldProjection;
     public static void load2(){
         Blocks.sand.requirements(Category.effect,ItemStack.with(Items.sand,1000,ModItems.rock,400));

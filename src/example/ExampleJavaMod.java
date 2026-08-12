@@ -1,8 +1,8 @@
 package example;
 
-import dev.jojofr.multicrafter.type.DrawRecipe;
-import dev.jojofr.multicrafter.type.IOEntry;
-import dev.jojofr.multicrafter.type.Recipe;
+//import dev.jojofr.multicrafter.type.DrawRecipe;
+//import dev.jojofr.multicrafter.type.IOEntry;
+//import dev.jojofr.multicrafter.type.Recipe;
 import arc.*;
 import arc.graphics.Color;
 import arc.graphics.g2d.Draw;
@@ -617,18 +617,18 @@ public class ExampleJavaMod extends Mod{
             reload=120f;
             range=80;
         }};
-        ModBlocks.metalCrusher=new MultiCrafterBlock("metal-crusher-v0-0-4"){{
-            health=100;
-            size=1;
-            drawer=new DrawDefault();
-            requirements(Category.crafting,with(Items.copper,10,Items.lead,8,Items.graphite,5));
-//            consumePower(2);
-
-            new Recipe("recipe1"){{
-                craftTime=60f;
-                input.withItems(ItemStack.with(Items.copper,1)).withPower(1f);
-            }};
-        }};
+//        ModBlocks.metalCrusher=new MultiCrafterBlock("metal-crusher-v0-0-4"){{
+//            health=100;
+//            size=1;
+//            drawer=new DrawDefault();
+//            requirements(Category.crafting,with(Items.copper,10,Items.lead,8,Items.graphite,5));
+////            consumePower(2);
+//
+//            new Recipe("recipe1"){{
+//                craftTime=60f;
+//                input.withItems(ItemStack.with(Items.copper,1)).withPower(1f);
+//            }};
+//        }};
 
 
         //1x1
