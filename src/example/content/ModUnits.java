@@ -1,8 +1,13 @@
 package example.content;
 
+import arc.graphics.Color;
 import mindustry.ai.types.CargoAI;
 import mindustry.content.StatusEffects;
 import mindustry.entities.bullet.LaserBoltBulletType;
+import mindustry.entities.bullet.LaserBulletType;
+import mindustry.entities.part.DrawPart;
+import mindustry.entities.part.HaloPart;
+import mindustry.entities.part.ShapePart;
 import mindustry.gen.UnitEntity;
 import mindustry.graphics.Pal;
 import mindustry.type.UnitType;
@@ -46,6 +51,59 @@ public class ModUnits {
             }});
         }};
     }
+
+
+    public static UnitType firmament;//tian1qiong2
+    public static void load1(){
+        firmament=new UnitType("firmament"){{
+            constructor=UnitEntity::create;
+            accel=0.06f;
+            drag=0.04f;
+            flying=true;
+            health=1200;
+            armor=10;
+            speed=1.14f;
+            hitSize=7.75f;
+            itemCapacity=40;
+            weapons.add(new Weapon(){{
+                x=0f;
+                y=1.75f;
+                rotate=false;
+                mirror=false;
+                recoil=0.5f;
+                shake=0.8f;
+                reload=90f;
+                bullet=new LaserBulletType(){{
+                    speed=8.5f;
+                    damage=60f;
+                    width=8*1.5f;
+                    colors=new Color[]{Pal.techBlue,Pal.techBlue,Pal.techBlue,Pal.techBlue,Pal.techBlue};
+                }};
+                parts.addAll(new ShapePart(){{
+                    sides=4;
+                    circle=false;
+                    hollow=true;
+                    color=Pal.techBlue;
+                    progress=DrawPart.PartProgress.warmup.delay(0.9F);;
+                    rotateSpeed=3.5f;
+                    x=0f;
+                    y=1.75f;
+                }},new HaloPart(){{
+                    tri=true;
+                    shapes=3;
+                    color=Pal.techBlue;
+                    progress=DrawPart.PartProgress.warmup.delay(0.9F);
+//                    radius=16;
+                    triLength=0;
+                    triLengthTo=16;
+                    haloRotateSpeed=3.5f;
+                    x=0f;
+                    y=0.75f;
+                }});
+            }});
+        }};
+    }
+
     public static void loadDrone(){
         drone=new ErekirUnitType("drone"){{
             envDisabled=0;

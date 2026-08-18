@@ -1777,7 +1777,7 @@ public class ExampleJavaMod extends Mod{
             shootY=12;
             ammo(Liquids.hydrogen,new FlakBulletType(8.9f,75f){{
                 buildingDamageMultiplier=0.5f;
-                lifetime=160f;
+                lifetime=150f;
                 hitEffect=ModFx.shapeEffect2;
                 shootEffect=Fx.shootSmokeSquareBig;
                 trailEffect=Fx.colorSpark;
@@ -2294,6 +2294,7 @@ public class ExampleJavaMod extends Mod{
             }});
         }};
 
+        ModUnits.load1();
 
 
         ModBlocks.sentinelCore=new CoreBlock("sentinel-core"){{

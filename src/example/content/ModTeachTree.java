@@ -2,13 +2,11 @@ package example.content;
 
 
 import example.expand.ResearchNode;
-import mindustry.content.Blocks;
-import mindustry.content.Items;
-import mindustry.content.Planets;
-import mindustry.content.TechTree;
+import mindustry.content.*;
 import mindustry.ctype.UnlockableContent;
 import mindustry.type.Item;
 import mindustry.type.ItemStack;
+import mindustry.type.LiquidStack;
 import mindustry.world.Block;
 
 import static mindustry.content.TechTree.node;
@@ -73,6 +71,18 @@ public class ModTeachTree {
         addToTechNode(ModItems.rock,ModItems.tin);
         addToTechNode(ModItems.tin,ModItems.bronze);
         addToTechNode(ModItems.rock,ModItems.gold);
+
+
+        addToTechNode(Liquids.water,ModLiquids.lava);
+        addToTechNode(Liquids.water,Liquids.hydrogen);
+        addToTechNode(Liquids.oil,Liquids.arkycite);
+
+
+        addToTechNode(Blocks.siliconSmelter,ModBlocks.electrolyticSeparator);
+
+        addToTechNode(Blocks.powerNodeLarge,ModBlocks.laserEnergyNode);
+        addToTechNode(ModBlocks.laserEnergyNode,ModBlocks.mechanicalGenerator);
+        addToTechNode(ModBlocks.mechanicalGenerator,ModBlocks.waterDispenser);
 
 
         addToTechNode(Blocks.siliconSmelter,ModBlocks.scrapSiliconSmelter);
