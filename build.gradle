@@ -16,6 +16,11 @@ repositories{
 //        patternLayout {artifact '/dev/[organisation]/[module]/releases/download/[revision]/MultiCrafter.jar'}
 //        metadataSources { artifact() }
 //    }
+//    ivy {
+//        url = 'https://github.com/'
+//        patternLayout {artifact '/[organisation]/[module]/releases/download/[revision]/MultiCrafter.jar'}
+//        metadataSources { artifact() }
+//    }
 }
 
 java{
@@ -46,6 +51,7 @@ dependencies{
     compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
 
 //    compileOnly "com.github.JojoFR1.MultiCrafter:v1.4.2"
+//    compileOnly 'JojoFR1:MultiCrafter:v1.5.0'
 
     annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
 }

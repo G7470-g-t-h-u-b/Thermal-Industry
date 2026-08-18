@@ -74,13 +74,16 @@ public class ModUnits {
                 shake=0.8f;
                 reload=90f;
                 bullet=new LaserBulletType(){{
-                    speed=8.5f;
+                    lifetime=45f;
+                    speed=4f;
                     damage=60f;
                     width=8*1.5f;
                     colors=new Color[]{Pal.techBlue,Pal.techBlue,Pal.techBlue,Pal.techBlue,Pal.techBlue};
                 }};
                 parts.addAll(new ShapePart(){{
                     sides=4;
+                    radius=0;
+                    radiusTo=16;
                     circle=false;
                     hollow=true;
                     color=Pal.techBlue;
