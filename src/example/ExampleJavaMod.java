@@ -1679,12 +1679,12 @@ public class ExampleJavaMod extends Mod{
                 width=8;
                 height=2.8f*8;
             }});
-            shoot=new ShootAlternate(){{
-                shots=12;
-                shotDelay=2.8f;
-                barrels=4;
-                spread=3.6f;
-            }};
+            shoot=new ShootAlternate(){{//
+                shots=12;//
+                shotDelay=2.8f;//
+                barrels=4;//
+                spread=3.6f;//
+            }};//
         }};
         ModTurrets.phantomSpirit=new ItemTurret("phantom-spirit"){{
             requirements(Category.turret,ItemStack.with());
