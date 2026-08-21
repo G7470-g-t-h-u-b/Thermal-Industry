@@ -66,6 +66,7 @@ public class ModFx {
         sparkRad=7.2f*8;
         sparkLen=2.6f*8;
         smokes=30;
-        smokeRad=1.2f*8;
+        smokeRad=6f*8;
+        smokeSize=1.2f*8;
     }};
 }

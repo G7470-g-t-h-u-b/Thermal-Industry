@@ -1627,10 +1627,11 @@ public class ExampleJavaMod extends Mod{
         }};
         ModTurrets.zhiyan=new ItemTurret("zhiyan"){{//掷岩
             size=4;
-            reload=90;
-            recoil=4f;
-            maxAmmo=60;
-            inaccuracy=10f;
+            reload=90;//
+            recoil=4f;//
+            maxAmmo=60;//
+            inaccuracy=10f;//
+            range=8*30;
             ammo(Items.graphite,new FlakBulletType(8f,28f){{
                 collidesAir=true;
                 collidesGround=true;
