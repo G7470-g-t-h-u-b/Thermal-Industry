@@ -1067,7 +1067,7 @@ public class ExampleJavaMod extends Mod{
                 frontColor=Pal.darkerGray;
                 ammoMultiplier=2;
                 width=8;
-                height=2.8f*8;
+                height=3f*8;
             }},Items.pyratite,new FlakBulletType(8f,55f){{
                 collidesAir=true;
                 collidesGround=true;
@@ -1090,7 +1090,7 @@ public class ExampleJavaMod extends Mod{
                 frontColor=Pal.darkerGray;
                 ammoMultiplier=4;
                 width=8;
-                height=2.8f*8;
+                height=3f*8;
             }});
 
             shoot=new ShootAlternate(){{
@@ -1231,6 +1231,7 @@ public class ExampleJavaMod extends Mod{
                 keepVelocity=false;
             }});
         }};
+        //4x4-Item
         ModTurrets.pureEmptiness=new ItemTurret("pure-emptiness"){{
             size=4;
             shake=3;
@@ -1623,6 +1624,67 @@ public class ExampleJavaMod extends Mod{
             ammoPerShot=10;
             consumeAmmoOnce=true;
             coolant = consumeCoolant(0.5f);
+        }};
+        ModTurrets.zhiyan=new ItemTurret("zhiyan"){{//掷岩
+            size=4;
+            reload=90;
+            recoil=4f;
+            maxAmmo=60;
+            inaccuracy=10f;
+            ammo(Items.graphite,new FlakBulletType(8f,28f){{
+                collidesAir=true;
+                collidesGround=true;
+                collides=true;
+                splashDamage=35;
+                splashDamageRadius=4.2f*8;
+                knockback=0.3f;
+                lifetime=60;
+                shootEffect=Fx.shootBig2;
+                smokeEffect=Fx.shootSmallFlame;
+                trailLength=9;
+                trailWidth=1.8f;
+                trailColor=Pal.graphiteAmmoFront;
+                trailChance=0.8f;
+                trailEffect=ModFx.kuoleiTrailFx;
+                hitEffect=ModFx.explosionEffectBig1;
+                sprite="thermal-industry-missile-1";
+                backColor=Pal.graphiteAmmoBack;
+                hitColor=Pal.graphiteAmmoFront;
+                frontColor=Pal.darkerGray;
+                ammoMultiplier=2;
+                width=12;
+                height=3.6f*8;
+                status=StatusEffects.blasted;
+            }},Items.pyratite,new FlakBulletType(8f,28){{
+                collidesAir=true;
+                collidesGround=true;
+                collides=true;
+                splashDamage=35;
+                splashDamageRadius=5f*8;
+                knockback=0.3f;
+                lifetime=60;
+                shootEffect=Fx.shootBig2;
+                smokeEffect=Fx.shootSmallFlame;
+                trailLength=9;
+                trailWidth=1.8f;
+                trailColor=Pal.darkPyraFlame;
+                trailChance=0.8f;
+                trailEffect=ModFx.kuoleiTrailFx;
+                hitEffect=ModFx.explosionEffectBig1;
+                sprite="thermal-industry-missile-1";
+                backColor=Pal.lightPyraFlame;
+                hitColor=Pal.darkPyraFlame;
+                frontColor=Pal.darkerGray;
+                ammoMultiplier=2;
+                width=8;
+                height=2.8f*8;
+            }});
+            shoot=new ShootAlternate(){{
+                shots=12;
+                shotDelay=2.8f;
+                barrels=4;
+                spread=3.6f;
+            }};
         }};
         ModTurrets.phantomSpirit=new ItemTurret("phantom-spirit"){{
             requirements(Category.turret,ItemStack.with());

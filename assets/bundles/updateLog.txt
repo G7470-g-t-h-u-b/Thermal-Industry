@@ -3,7 +3,8 @@
 [=]:修改
 [f]:修复
 
-0.3.0a:{
+0.2.3a ~ 0.3.0a:{
+    <版本号修改: 0.2.3-alpha1  -> 0.2.3_b0001>
     Items:
         [+]实验型爆炸物->工业炸药(alpha7)
         [+]放射性燃料组件(alpha29)(todo)
@@ -11,6 +12,7 @@
         [+]钢(alpha33)
         [=]工业炸药 explosiveness 2.8f->3f(alpha2)
         [=]工业炸药 flammability 1.8f->1.6f(alpha2)
+        [=]处理器贴图重绘(b0043)
     Blocks:
         [+]铁提取机(alpha28)
         [+]相织布传送带(alpha7)
@@ -21,9 +23,12 @@
         [+]阔雷(alpha26)
         [+]废料工厂(alpha31)
         [+]钢冶炼炉(alpha33)
+        [+]掷岩(b0043)
         [=]寒霜特效修改(alpha1,2)
         [=]重绘金矿、锌矿贴图(alpha6)
         [=]大硅钢机itemCapacity 10->20(alpha25)
+    Units:
+        [+]天穹(alpha40)
     Others:
         [+]t-o-d-o移至Todo.md(alpha30)
         [+]更多t-o-d-o(alpha25)
