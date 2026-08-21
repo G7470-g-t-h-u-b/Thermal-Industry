@@ -53,6 +53,8 @@ dependencies{
 //    compileOnly "com.github.JojoFR1.MultiCrafter:v1.4.2"
 //    compileOnly 'JojoFR1:MultiCrafter:v1.5.0'
 
+    //你说的对但MI:main: Could not resolve JojoFR1:MultiCrafter:v1.5.0.
+
     annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
 }
 

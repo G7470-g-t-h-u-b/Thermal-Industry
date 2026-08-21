@@ -78,8 +78,15 @@ public class ModTeachTree {
         addToTechNode(Liquids.oil,Liquids.arkycite);
 
 
+        addToTechNode(Blocks.salvo,ModTurrets.magneticSpear);
+
+        addToTechNode(Blocks.copperWall,ModBlocks.exposedCopperWall);
+        addToTechNode(ModBlocks.exposedCopperWall,ModBlocks.weatheredCopperWall);
+        addToTechNode(ModBlocks.weatheredCopperWall,ModBlocks.oxidizedCopperWall);
+
         addToTechNode(Blocks.siliconSmelter,ModBlocks.electrolyticSeparator);
 
+        addToTechNode(Blocks.battery,ModBlocks.smallArmoredBattery);
         addToTechNode(Blocks.powerNodeLarge,ModBlocks.laserEnergyNode);
         addToTechNode(ModBlocks.laserEnergyNode,ModBlocks.mechanicalGenerator);
         addToTechNode(ModBlocks.mechanicalGenerator,ModBlocks.waterDispenser);

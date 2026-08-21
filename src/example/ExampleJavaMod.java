@@ -765,6 +765,19 @@ public class ExampleJavaMod extends Mod{
                 buildingDamageMultiplier=0.4f;
                 hitColor=backColor=trailColor=Pal.techBlue;
                 frontColor=Pal.techBlue;
+            }},Items.graphite,new BasicBulletType(7.2f,28){{
+                lifetime=40;
+                ammoMultiplier=1;
+                shootEffect=t_s;
+                width=6;
+                height=16;
+                hitSize=6;
+                smokeEffect=Fx.shootSmallSmoke;
+                trailWidth=2;
+                trailLength=8;
+                buildingDamageMultiplier=0.4f;
+                hitColor=backColor=trailColor=Pal.graphiteAmmoBack;
+                frontColor=Pal.graphiteAmmoFront;
             }});
             consumePower(0.15f);
             consumeLiquid(Liquids.water,0.3f);

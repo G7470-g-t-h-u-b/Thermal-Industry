@@ -63,7 +63,7 @@ public class ModUnits {
             health=1200;
             armor=10;
             speed=1.14f;
-            hitSize=7.75f;
+            hitSize=8*7.75f;
             itemCapacity=40;
             weapons.add(new Weapon(){{
                 x=0f;
