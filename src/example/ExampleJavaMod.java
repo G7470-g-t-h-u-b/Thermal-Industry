@@ -1627,11 +1627,11 @@ public class ExampleJavaMod extends Mod{
         }};
         ModTurrets.zhiyan=new ItemTurret("zhiyan"){{//掷岩
             size=4;
-            reload=90;//
+            reload=105;//
             recoil=4f;//
             maxAmmo=60;//
             inaccuracy=10f;//
-            range=8*30;
+            range=8*50;
             ammo(Items.graphite,new FlakBulletType(8f,28f){{
                 collidesAir=true;
                 collidesGround=true;
@@ -1656,12 +1656,12 @@ public class ExampleJavaMod extends Mod{
                 width=12;
                 height=3.6f*8;
                 status=StatusEffects.blasted;
-            }},Items.pyratite,new FlakBulletType(8f,28){{
+            }},Items.pyratite,new FlakBulletType(8f,39){{
                 collidesAir=true;
                 collidesGround=true;
                 collides=true;
                 splashDamage=35;
-                splashDamageRadius=5f*8;
+                splashDamageRadius=6f*8;
                 knockback=0.3f;
                 lifetime=60;
                 shootEffect=Fx.shootBig2;
@@ -1679,12 +1679,13 @@ public class ExampleJavaMod extends Mod{
                 ammoMultiplier=2;
                 width=8;
                 height=2.8f*8;
+                status=StatusEffects.burning;
             }});
             shoot=new ShootAlternate(){{//
                 shots=12;//
                 shotDelay=2.8f;//
                 barrels=4;//
-                spread=3.6f;//
+                spread=4f;//
             }};//
         }};
         ModTurrets.phantomSpirit=new ItemTurret("phantom-spirit"){{

@@ -56,7 +56,7 @@ public class ModFx {
         sizeTo=2.2f;
     }};
     public static final ExplosionEffect explosionEffectBig1=new ExplosionEffect(){{
-        smokeColor=Pal.darkPyraFlame;
+        smokeColor=Pal.lighterOrange;
         sparkColor=Pal.lightPyraFlame;
         lifetime=45;
         waveLife=28;
