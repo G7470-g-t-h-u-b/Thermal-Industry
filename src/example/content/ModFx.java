@@ -48,11 +48,24 @@ public class ModFx {
     public static final ParticleEffect kuoleiTrailFx=new ParticleEffect(){{//todo:特效修复
         colorTo=TIColor.smoke1;
         lifetime=35;
-        length=35f;
+        length=35f;//8*4.375
         cone=0;
-        interp=Interp.pow10In;
+//        interp=Interp.pow10In;
         particles=3;
         sizeFrom=1.8f;
-        sizeTo=2f;
+        sizeTo=2.2f;
+    }};
+    public static final ExplosionEffect explosionEffectBig1=new ExplosionEffect(){{
+        smokeColor=Pal.darkPyraFlame;
+        sparkColor=Pal.lightPyraFlame;
+        lifetime=45;
+        waveLife=28;
+        waveRadBase=1.5f;
+        waveRad=9*8;
+        sparks=10;
+        sparkRad=7.2f*8;
+        sparkLen=2.6f*8;
+        smokes=30;
+        smokeRad=1.2f*8;
     }};
 }
