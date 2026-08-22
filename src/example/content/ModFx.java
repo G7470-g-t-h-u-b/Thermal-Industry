@@ -59,13 +59,13 @@ public class ModFx {
         smokeColor=Pal.lighterOrange;
         sparkColor=Pal.lightPyraFlame;
         lifetime=45;
-        waveLife=28;
+        waveLife=24;
         waveRadBase=1.5f;
         waveRad=9*8;
         sparks=10;
         sparkRad=7.2f*8;
         sparkLen=2.6f*8;
-        smokes=30;
+        smokes=25;
         smokeRad=6f*8;
         smokeSize=1.2f*8;
     }};

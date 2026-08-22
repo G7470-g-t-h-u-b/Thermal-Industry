@@ -180,7 +180,7 @@ public class ExampleJavaMod extends Mod{
         ModItems.rock=new Item("rock",Color.HSVtoRGB(240,7,50));
         ModItems.load2();
 //        ModItems.coke=new Item("coke"){{flammability=1.4f;}};
-        ModItems.ferrum =new Item("ferrum",Color.HSVtoRGB(233,16,25));
+        ModItems.ferrum =new Item("ferrum",Color.HSVtoRGB(233,16,25)){{cost=1.6f;}};
         ModItems.steel=new Item("steel",Color.HSVtoRGB(0,0,33)){{cost=2f;}};
         ModItems.metaglassBottle=new Item("metaglass-bottle",Color.HSVtoRGB(240,7,88));
         ModItems.wateryMetaglassBottle=new Item("watery-metaglass-bottle",Color.HSVtoRGB(232,52,91));
@@ -1626,13 +1626,15 @@ public class ExampleJavaMod extends Mod{
             coolant = consumeCoolant(0.5f);
         }};
         ModTurrets.zhiyan=new ItemTurret("zhiyan"){{//掷岩
+            requirements(Category.turret,ItemStack.with(Items.graphite,50,ModItems.ferrum,80,Items.titanium,30,Items.thorium,40));
+            shootSound=Sounds.shootScathe;
             size=4;
             reload=105;//
             recoil=4f;//
             maxAmmo=60;//
             inaccuracy=10f;//
             range=8*50;
-            ammo(Items.graphite,new FlakBulletType(8f,28f){{
+            ammo(Items.graphite,new FlakBulletType(8f,35f){{
                 collidesAir=true;
                 collidesGround=true;
                 collides=true;
@@ -1656,7 +1658,7 @@ public class ExampleJavaMod extends Mod{
                 width=12;
                 height=3.6f*8;
                 status=StatusEffects.blasted;
-            }},Items.pyratite,new FlakBulletType(8f,39){{
+            }},Items.pyratite,new FlakBulletType(8f,56f){{
                 collidesAir=true;
                 collidesGround=true;
                 collides=true;
