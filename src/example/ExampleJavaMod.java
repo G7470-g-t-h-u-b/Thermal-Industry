@@ -1706,7 +1706,7 @@ public class ExampleJavaMod extends Mod{
                 fragBullet=new LightningBulletType(){{
                     lightning=6;
                     lightningColor=Pal.accent;
-                    lightningLength=4;
+                    lightningLength=16;
                     lightningDamage=35;
                     lightningCone=360f/6f;
                 }};
@@ -1750,11 +1750,12 @@ public class ExampleJavaMod extends Mod{
                 radiusTo=6;
                 rotateSpeed=0;
                 triLength=0;
-                triLengthTo=-4;//8 * -0.25f
+                triLengthTo=4;//8 * 0.5f
                 progress=haloProgress;
                 haloRadius=16;
                 haloRadiusTo=16;
                 y=haloY;
+                shapeRotation=180;
             }},new HaloPart(){{//>
                 tri=true;
                 shapes=2;
@@ -1770,6 +1771,7 @@ public class ExampleJavaMod extends Mod{
                 haloRadiusTo=16;
                 y=haloY;
             }});}};
+            ammoPerShot=10;
         }};
         ModTurrets.phantomSpirit=new ItemTurret("phantom-spirit"){{
             requirements(Category.turret,ItemStack.with());
