@@ -1695,6 +1695,8 @@ public class ExampleJavaMod extends Mod{
             maxAmmo=60;
             recoil=5;
             shake=4;
+            shootSound=Sounds.shootForeshadow;
+            range=8*180;
 
             ammo(Items.surgeAlloy,new RailBulletType(){{
                 shootEffect = Fx.instShoot;
@@ -1707,6 +1709,8 @@ public class ExampleJavaMod extends Mod{
                 lightningDamage=35;
                 lightningCone=360f/6f;
                 makeFire=true;
+
+                length=8*200;
 
             }});
 
