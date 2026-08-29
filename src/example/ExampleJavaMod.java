@@ -1706,7 +1706,7 @@ public class ExampleJavaMod extends Mod{
                 fragBullet=new LightningBulletType(){{
                     lightning=6;
                     lightningColor=Pal.accent;
-                    lightningLength=8*4;
+                    lightningLength=4;
                     lightningDamage=35;
                     lightningCone=360f/6f;
                 }};
@@ -1716,7 +1716,7 @@ public class ExampleJavaMod extends Mod{
 
             }});
 
-            final float haloY=28f/32f*8f;
+            final float haloY=28f/32f*-8f;
             final DrawPart.PartProgress haloProgress = DrawPart.PartProgress.warmup;
             drawer=new DrawTurret(){{parts.addAll(new ShapePart(){{
                 circle=true;
