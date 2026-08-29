@@ -13,7 +13,6 @@ import arc.math.Interp;
 import arc.struct.Seq;
 import arc.util.*;
 import example.content.*;
-import example.expand.MultiFormulaFactory_UNUSED;
 import example.expand.OutPostCoreBlock;
 import example.expand.ResearchNode;
 import example.expand.StateFieldProjection;
@@ -1689,6 +1688,82 @@ public class ExampleJavaMod extends Mod{
                 barrels=4;//
                 spread=4f;//
             }};//
+        }};
+        ModTurrets.huguang =new ItemTurret("huguang"){{
+            reload=120f;
+            size=4;
+            maxAmmo=60;
+            recoil=5;
+            shake=4;
+
+            ammo(Items.surgeAlloy,new RailBulletType(){{
+                shootEffect = Fx.instShoot;
+                hitEffect = Fx.instHit;
+                pointEffect = Fx.instTrail;
+                damage=1400;
+                lightning=6;
+                lightningColor=Pal.accent;
+                lightningLength=8*4;
+                lightningDamage=35;
+                lightningCone=360f/6f;
+                makeFire=true;
+
+            }});
+
+            final float haloY=28f/32f*8f;
+            final DrawPart.PartProgress haloProgress = DrawPart.PartProgress.warmup;
+            drawer=new DrawTurret(){{parts.addAll(new ShapePart(){{
+                circle=true;
+                hollow=true;
+                radius=0;
+                radiusTo=16f;
+                color=Pal.accent;
+                rotateSpeed=0;
+                progress=haloProgress;
+                y=haloY;
+            }},new HaloPart(){{  //=>-
+                tri=true;
+                shapes=2;
+                color=Pal.accent;
+                rotateSpeed=0;
+                haloRotation=180;
+                radius=0;
+                radiusTo=6;
+                triLength=0;
+                triLengthTo=8*2f;//16
+                progress=haloProgress;
+                haloRadius=16;
+                haloRadiusTo=16;
+                y=haloY;
+            }},new HaloPart(){{  //<
+                tri=true;
+                shapes=2;
+                color=Pal.accent;
+                haloRotation=180;
+                radius=0;
+                radiusTo=6;
+                rotateSpeed=0;
+                triLength=0;
+                triLengthTo=-4;//8 * -0.25f
+                progress=haloProgress;
+                haloRadius=16;
+                haloRadiusTo=16;
+                y=haloY;
+            }},new HaloPart(){{//>
+                tri=true;
+                shapes=2;
+                color=Pal.accent;
+                haloRotation=180;
+                radius=0;
+                radiusTo=6;
+                rotateSpeed=0;
+                triLength=0;
+                triLengthTo=6;
+                progress=haloProgress;
+                haloRadius=16;
+                haloRadiusTo=16;
+                y=haloY;
+            }});}};
         }};
         ModTurrets.phantomSpirit=new ItemTurret("phantom-spirit"){{
             requirements(Category.turret,ItemStack.with());

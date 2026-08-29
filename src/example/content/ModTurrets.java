@@ -19,7 +19,8 @@ public class ModTurrets {
     public static ItemTurret blaze;
     public static ItemTurret pureEmptiness;
     public static ItemTurret daytime;
-    public static ItemTurret zhiyan;//掷岩
+    public static ItemTurret zhiyan;
+    public static ItemTurret huguang;
     public static ItemTurret phantomSpirit;
     public static ItemTurret end;
     public static LiquidTurret frost;

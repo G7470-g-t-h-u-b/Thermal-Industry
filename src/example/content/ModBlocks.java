@@ -19,6 +19,7 @@ import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.distribution.BufferedItemBridge;
 import mindustry.world.blocks.distribution.Conveyor;
 import mindustry.world.blocks.distribution.Duct;
+import mindustry.world.blocks.distribution.StackRouter;
 import mindustry.world.blocks.environment.Floor;
 import mindustry.world.blocks.environment.RemoveWall;
 import mindustry.world.blocks.heat.HeatConductor;
@@ -151,6 +152,7 @@ public class ModBlocks {
         }};
     }
 
+    public static StackRouter plastaniumRouter;
     public static void loadDistribution(){
         ModBlocks.itemTrack=new Duct("item-track"){{
             requirements(Category.distribution,with(Items.phaseFabric,1));
@@ -158,7 +160,7 @@ public class ModBlocks {
             speed=0.08f;
         }};
         ModBlocks.logisticsPipeline=new Duct("logistics-pipeline"){{
-            requirements(Category.distribution,with(Items.titanium,1,Items.copper,1,ModItems.siliconSteel,1));
+            requirements(Category.distribution,with(Items. titanium,1,Items.copper,1,ModItems.siliconSteel,1));
             health=80;
             speed=4f;
         }};
@@ -166,6 +168,11 @@ public class ModBlocks {
             requirements(Category.distribution,with(Items.phaseFabric,1,ModItems.ferrum,1,Items.plastanium,1));
             health=100;
             speed=0.2f;
+        }};
+        plastaniumRouter=new StackRouter("plastanium-router"){{
+            hasPower=false;
+            speed=6f;
+            requirements(Category.distribution,ItemStack.with(Items.plastanium,5,Items.silicon,2));
         }};
     }
 
