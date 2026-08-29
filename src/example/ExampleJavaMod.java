@@ -1703,11 +1703,13 @@ public class ExampleJavaMod extends Mod{
                 hitEffect = Fx.instHit;
                 pointEffect = Fx.instTrail;
                 damage=1400;
-                lightning=6;
-                lightningColor=Pal.accent;
-                lightningLength=8*4;
-                lightningDamage=35;
-                lightningCone=360f/6f;
+                fragBullet=new LightningBulletType(){{
+                    lightning=6;
+                    lightningColor=Pal.accent;
+                    lightningLength=8*4;
+                    lightningDamage=35;
+                    lightningCone=360f/6f;
+                }};
                 makeFire=true;
 
                 length=8*200;
@@ -1720,7 +1722,7 @@ public class ExampleJavaMod extends Mod{
                 circle=true;
                 hollow=true;
                 radius=0;
-                radiusTo=16f;
+                radiusTo=16f/2f;
                 color=Pal.accent;
                 rotateSpeed=0;
                 progress=haloProgress;
@@ -1730,7 +1732,7 @@ public class ExampleJavaMod extends Mod{
                 shapes=2;
                 color=Pal.accent;
                 rotateSpeed=0;
-                haloRotation=180;
+//                haloRotation=180;
                 radius=0;
                 radiusTo=6;
                 triLength=0;
@@ -1743,7 +1745,7 @@ public class ExampleJavaMod extends Mod{
                 tri=true;
                 shapes=2;
                 color=Pal.accent;
-                haloRotation=180;
+//                haloRotation=180;
                 radius=0;
                 radiusTo=6;
                 rotateSpeed=0;
